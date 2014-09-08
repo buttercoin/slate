@@ -32,4 +32,8 @@ We've built the following officially supported API Client SDK's
 
 Have another suggested language for a client?  Just [let us know](mailto:api@buttercoin.com?subject=Add%20An%20API%20Language).
 
+<aside class="notice">
+  These libraries are open source projects and we love involvement from the community! Hit us up with pull requests and issues.
+</aside>
+
 
