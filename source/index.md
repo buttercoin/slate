@@ -20,7 +20,9 @@ includes:
   - account
   - orders
   - transactions
+  - rate
   - errors
+  - sandbox
 
 search: true
 ---
