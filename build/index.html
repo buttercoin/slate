@@ -169,7 +169,7 @@ You must always keep your API Keys secure to make sure no one can access your ac
 </aside></p>
 
 <p><em>If you are building your own client for the API&hellip;</em></p>
-<h3 id='building-an-hmac-signature-with-sha-256'>Building an HMAC Signature with SHA-256</h1>
+<h3 id='building-an-hmac-signature-with-sha-256'>Building an HMAC Signature with SHA-256</h3>
 <ol>
 <li>Concatenate the timestamp, request URL and parameters into a UTF-8 String:</li>
 <li>Convert the message to Base64</li>
@@ -187,7 +187,7 @@ You must always keep your API Keys secure to make sure no one can access your ac
 
 <p>Still not sure?  Find code examples <a href="https://github.com/buttercoin/buttercoinsdk-node/blob/master/index.js#L32">here</a>, <a href="https://github.com/buttercoin/buttercoinsdk-php/blob/master/src/Client/ButtercoinClient.php#L144">here</a>, <a href="https://github.com/buttercoin/buttercoinsdk-python/blob/master/buttercoin/api.py#L101">here</a>, and <a href="https://github.com/buttercoin/buttercoinsdk-ruby/blob/master/lib/buttercoin/client.rb#L91">here</a>.</p>
 
-          <h1 id='public'>Public</h1><h2 id='get-the-orderbook'>Get the orderbook</h1>
+          <h1 id='public'>Public</h1><h2 id='get-the-orderbook'>Get the orderbook</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -301,13 +301,13 @@ You must always keep your API Keys secure to make sure no one can access your ac
 </pre>
 
 <p>Get all the orders in the book on both the bid and ask sides</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/orderbook</code></p>
 
 <p><aside class="notice">
 An API Key is not required to access this endpoint.
 </aside></p>
-<h2 id='get-trade-history'>Get trade history</h1>
+<h2 id='get-trade-history'>Get trade history</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -421,13 +421,13 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>Get the last one hundred trades</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/trades</code></p>
 
 <p><aside class="notice">
 An API Key is not required to access this endpoint.
 </aside></p>
-<h2 id='get-the-ticker'>Get the ticker</h1>
+<h2 id='get-the-ticker'>Get the ticker</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -482,14 +482,14 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>Get the last trade price, current ask, and current bid</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/ticker</code></p>
 
 <p><aside class="notice">
 An API Key is not required to access this endpoint.
 </aside></p>
 
-          <h1 id='key'>Key</h1><h2 id='get-permissions'>Get permissions</h1>
+          <h1 id='key'>Key</h1><h2 id='get-permissions'>Get permissions</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -543,10 +543,10 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>Get all the permissions associated with this key</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/key</code></p>
 
-          <h1 id='account'>Account</h1><h2 id='get-account-balances'>Get account balances</h1>
+          <h1 id='account'>Account</h1><h2 id='get-account-balances'>Get account balances</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -593,9 +593,9 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>This endpoint retrieves the account balances in all currencies held.</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/account/balances</code></p>
-<h2 id='get-deposit-address'>Get deposit address</h1>
+<h2 id='get-deposit-address'>Get deposit address</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -632,10 +632,10 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>Get the bitcoin deposit address associated with this account </p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/account/depositAddress</code></p>
 
-          <h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get all orders</h1>
+          <h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get all orders</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -730,9 +730,9 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>This endpoint retrieves all orders based on the given query.</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/orders</code></p>
-<h3 id='query-parameters'>Query Parameters</h1>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -760,7 +760,7 @@ An API Key is not required to access this endpoint.
 <td>format: ISO-8601, e.g. <code class="prettyprint">&#39;2014-05-06T13:15:30Z&#39;</code></td>
 </tr>
 </tbody></table>
-<h2 id='get-a-single-order'>Get a single order</h1>
+<h2 id='get-a-single-order'>Get a single order</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -874,9 +874,9 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>This endpoint retrieves a single order with the given ID.</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/orders/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h1>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -888,7 +888,7 @@ An API Key is not required to access this endpoint.
 <td>The ID of the order to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-an-order'>Create an order</h1><pre class="highlight ruby"><span class="c1"># a limit order to buy bitcoin at a specified price</span>
+<h2 id='create-an-order'>Create an order</h2><pre class="highlight ruby"><span class="c1"># a limit order to buy bitcoin at a specified price</span>
 <span class="n">order</span> <span class="o">=</span> <span class="p">{</span>
   <span class="ss">:instrument</span> <span class="o">=&gt;</span> <span class="s2">"BTC_USD"</span><span class="p">,</span>
   <span class="ss">:side</span> <span class="o">=&gt;</span> <span class="s2">"buy"</span><span class="p">,</span>
@@ -986,7 +986,7 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>Create a new order with the given params</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST /v1/orders</code></p>
 
 <table><thead>
@@ -1016,11 +1016,11 @@ An API Key is not required to access this endpoint.
 <td><code class="prettyprint">string</code>, required <code class="prettyprint">false</code></td>
 </tr>
 </tbody></table>
-<h3 id='more-about-instruments'>More about Instruments</h1>
+<h3 id='more-about-instruments'>More about Instruments</h3>
 <p>You can think of the instrument you specify as the first currency priced in terms of the second.  For example, for an instrument type of <code class="prettyprint">BTC_USD</code>, you are pricing bitcoin in terms of US Dollars.  You can see code examples to the right.</p>
 
 <p><em>Note: We do not currently support market orders for the buy side</em> <code class="prettyprint">BTC_USD</code> <em>instrument type, meaning you cannot create a market order to buy a specific amount of bitcoin. We do, however, support a sell side market order of this type.</em></p>
-<h2 id='cancel-an-order'>Cancel an order</h1><pre class="highlight ruby"><span class="n">order_id</span> <span class="o">=</span> <span class="s1">'e3afed81-4a9c-4480-a78a-e0872408b95a'</span>
+<h2 id='cancel-an-order'>Cancel an order</h2><pre class="highlight ruby"><span class="n">order_id</span> <span class="o">=</span> <span class="s1">'e3afed81-4a9c-4480-a78a-e0872408b95a'</span>
 <span class="n">client</span><span class="p">.</span><span class="nf">cancel_order</span><span class="p">(</span><span class="n">order_id</span><span class="p">)</span>
 </pre>
 <pre class="highlight python"><span class="n">order_id</span> <span class="o">=</span> <span class="s">'e3afed81-4a9c-4480-a78a-e0872408b95a'</span>
@@ -1058,9 +1058,9 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>Cancel a single order with the given ID.</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">DELETE /v1/orders/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h1>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1073,7 +1073,7 @@ An API Key is not required to access this endpoint.
 </tr>
 </tbody></table>
 
-          <h1 id='transactions'>Transactions</h1><h2 id='get-all-transactions'>Get all transactions</h1>
+          <h1 id='transactions'>Transactions</h1><h2 id='get-all-transactions'>Get all transactions</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -1172,9 +1172,9 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>This endpoint retrieves all transactions based on the given query.</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/transactions</code></p>
-<h3 id='query-parameters'>Query Parameters</h1>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1202,7 +1202,7 @@ An API Key is not required to access this endpoint.
 <td>format: ISO-8601, e.g. <code class="prettyprint">&#39;2014-05-06T13:15:30Z&#39;</code></td>
 </tr>
 </tbody></table>
-<h2 id='get-a-single-transaction'>Get a single transaction</h1>
+<h2 id='get-a-single-transaction'>Get a single transaction</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -1319,9 +1319,9 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>This endpoint retrieves a single transaction with the given ID.</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/transactions/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h1>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1333,7 +1333,7 @@ An API Key is not required to access this endpoint.
 <td>The ID of the transaction to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-a-deposit'>Create a deposit</h1><pre class="highlight ruby"><span class="n">deposit</span> <span class="o">=</span> <span class="p">{</span> 
+<h2 id='create-a-deposit'>Create a deposit</h2><pre class="highlight ruby"><span class="n">deposit</span> <span class="o">=</span> <span class="p">{</span> 
   <span class="ss">:method</span> <span class="o">=&gt;</span> <span class="s2">"wire"</span><span class="p">,</span>
   <span class="ss">:currency</span> <span class="o">=&gt;</span> <span class="s2">"USD"</span><span class="p">,</span>
   <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="s2">"500"</span>
@@ -1410,9 +1410,9 @@ An API Key is not required to access this endpoint.
 <td><code class="prettyprint">string</code>, required <code class="prettyprint">true</code></td>
 </tr>
 </tbody></table>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST /v1/transactions/deposit</code></p>
-<h2 id='create-a-withdrawal'>Create a withdrawal</h1><pre class="highlight ruby"><span class="n">withdrawal</span> <span class="o">=</span> <span class="p">{</span>
+<h2 id='create-a-withdrawal'>Create a withdrawal</h2><pre class="highlight ruby"><span class="n">withdrawal</span> <span class="o">=</span> <span class="p">{</span>
   <span class="ss">:method</span> <span class="o">=&gt;</span> <span class="s2">"check"</span><span class="p">,</span>
   <span class="ss">:currency</span> <span class="o">=&gt;</span> <span class="s2">"USD"</span><span class="p">,</span>
   <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="s2">"500"</span>
@@ -1501,9 +1501,9 @@ An API Key is not required to access this endpoint.
 <td><code class="prettyprint">string</code>, required <code class="prettyprint">true</code></td>
 </tr>
 </tbody></table>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST /v1/transactions/withdraw</code></p>
-<h2 id='send-bitcoins'>Send bitcoins</h1><pre class="highlight ruby"><span class="n">trxn</span> <span class="o">=</span> <span class="p">{</span>
+<h2 id='send-bitcoins'>Send bitcoins</h2><pre class="highlight ruby"><span class="n">trxn</span> <span class="o">=</span> <span class="p">{</span>
   <span class="ss">:currency</span> <span class="o">=&gt;</span> <span class="s2">"BTC"</span><span class="p">,</span>
   <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="s2">"100.231231"</span><span class="p">,</span>
   <span class="ss">:destination</span> <span class="o">=&gt;</span> <span class="s2">"&lt;bitcoin_address&gt;"</span>
@@ -1593,9 +1593,9 @@ An API Key is not required to access this endpoint.
 <td>address to which to send currency <code class="prettyprint">string</code>, required <code class="prettyprint">true</code></td>
 </tr>
 </tbody></table>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST /v1/transactions/send</code></p>
-<h2 id='cancel-a-transaction'>Cancel a transaction</h1>
+<h2 id='cancel-a-transaction'>Cancel a transaction</h2>
 <blockquote>
 <p>Success Response Code: 204</p>
 </blockquote>
@@ -1637,9 +1637,9 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <p>Cancel a single transaction with the given ID.</p>
-<h3 id='http-request'>HTTP Request</h1>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">DELETE /v1/transactions/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h1>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1672,7 +1672,7 @@ An API Key is not required to access this endpoint.
 <td>Maximum of 86,400 requests (Avg. of 1 per second)</td>
 </tr>
 </tbody></table>
-<h3 id='http-headers-and-response-codes'>HTTP Headers and Response codes</h1>
+<h3 id='http-headers-and-response-codes'>HTTP Headers and Response codes</h3>
 <p>The following headers are included with every API response:</p>
 
 <table><thead>
