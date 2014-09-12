@@ -4,7 +4,7 @@
 
 ```ruby
 # Add to your Gemfile
-gem 'buttercoin', '~> 0.0.1'
+gem 'buttercoin', '~> 0.0.3'
 
 # Or install RubyGems:
 gem install buttercoin
@@ -20,7 +20,7 @@ npm install buttercoinsdk-node
 
 ```php
 // Using Composer
-php composer.phar require buttercoin/buttercoin-sdk:~0.0.2
+php composer.phar require buttercoin/buttercoin-sdk:~0.0.3
 ```
 
 We've built the following officially supported API Client SDK's

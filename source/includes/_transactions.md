@@ -547,7 +547,7 @@ Send bitcoins to the given address with the following params params
 
 Parameter | Description
 --- | --- 
-`currency` | `['BTC']`, required `true`  
+`currency` | enum: `['BTC']`, required `true`  
 `amount` | `string`, required `true`  
 `destination` | address to which to send currency `string`, required `true`
 
