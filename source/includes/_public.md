@@ -67,7 +67,6 @@ end
   ],
   "price_currency": "USD",
   "quantity_currency": "BTC"
-}
 ```
 
 ```javascript
@@ -166,97 +165,101 @@ $client->getTradeHistory();
 ```ruby
 # Hashie::Mash Object examples
 
-# get the highest bid price
-orderbook.bid.first.price # 402.87
-# get the quantity of the lowest ask
-orderbook.ask.first.quantity # 1.35
+# get the most recent trade
+trades.first.spent # 0.05
+trades.first.spentCurrency # BTC
+trades.first.earned # 30
+trades.first.earnedCurrency # USD
+trades.first.timestamp # 1410806124481
 
-# loop through all bids
-orderbook.bid.each do |order|
-order.price
-order.quantity
+# loop through all trades 
+trades.each do |trade|
+  trade.spent
+  trade.earned
 end
 ```
 
 ```python
 # Dict Object
-{
-  "bid": [
-    {
-      "price": 402.87,
-      "quantity": 1.3
-    },
-    {
-      "price": 404.21,
-      "quantity": 1.25
-    }
-  ],
-  "ask": [
-    {
-      "price": 423.58,
-      "quantity": 1.3
-    },
-    {
-      "price": 425.25,
-      "quantity": 1.35
-    }
-  ],
-  "price_currency": "USD",
-  "quantity_currency": "BTC"
-}
+[ 
+  {
+    spent: 0.02,
+    spentCurrency: 'BTC',
+    earned: 12,
+    earnedCurrency: 'USD',
+    timestamp: 1410806083687
+  },
+  {
+    spent: 0.02,
+    spentCurrency: 'BTC',
+    earned: 12,
+    earnedCurrency: 'USD',
+    timestamp: 1410805865743
+  },
+  {
+    spent: 0.01,
+    spentCurrency: 'BTC',
+    earned: 6,
+    earnedCurrency: 'USD',
+    timestamp: 1410805865739
+  }
+]
 ```
 
 ```javascript
 // JSON Object
 {
-  "bid": [
+  trades:
+  [ 
     {
-      "price": 402.87,
-      "quantity": 1.3
+      spent: 0.02,
+      spentCurrency: 'BTC',
+      earned: 12,
+      earnedCurrency: 'USD',
+      timestamp: 1410806083687
     },
     {
-      "price": 404.21,
-      "quantity": 1.25
-    }
-  ],
-  "ask": [
-    {
-      "price": 423.58,
-      "quantity": 1.3
+      spent: 0.02,
+      spentCurrency: 'BTC',
+      earned: 12,
+      earnedCurrency: 'USD',
+      timestamp: 1410805865743
     },
     {
-      "price": 425.25,
-      "quantity": 1.35
+      spent: 0.01,
+      spentCurrency: 'BTC',
+      earned: 6,
+      earnedCurrency: 'USD',
+      timestamp: 1410805865739
     }
-  ],
-  "price_currency": "USD",
-  "quantity_currency": "BTC"
+  ]
 }
 ```
 
 ```php
 <?php
 // Array Object
-[
-  "bid" => [
-    [
-      "price" => 402.87,
-      "quantity" => 1.3
-    ],
-    [
-      "price" => 404.21,
-      "quantity" => 1.25
-    ]
+[ 
+  [
+    "spent" => 0.02,
+    "spentCurrency" => 'BTC',
+    "earned" => 12,
+    "earnedCurrency" => 'USD',
+    "timestamp" => 1410806083687
   ],
-  "ask" => [
-    [
-      "price" => 423.58,
-      "quantity" => 1.3
-    ],
-    [
-      "price" => 425.25,
-      "quantity" => 1.35
-    ]
+  [
+    "spent" => 0.02,
+    "spentCurrency" => 'BTC',
+    "earned" => 12,
+    "earnedCurrency" => 'USD',
+    "timestamp" => 1410805865743
+  ],
+  [
+    "spent" => 0.01,
+    "spentCurrency" => 'BTC',
+    "earned" => 6,
+    "earnedCurrency" => 'USD',
+    "timestamp" => 1410805865739
   ]
 ]
 ?>

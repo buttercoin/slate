@@ -245,7 +245,6 @@ You must always keep your API Keys secure to make sure no one can access your ac
   <span class="p">],</span>
   <span class="s">"price_currency"</span><span class="p">:</span> <span class="s">"USD"</span><span class="p">,</span>
   <span class="s">"quantity_currency"</span><span class="p">:</span> <span class="s">"BTC"</span>
-<span class="p">}</span>
 </pre>
 <pre class="highlight javascript"><span class="c1">// JSON Object
 </span><span class="p">{</span>
@@ -330,91 +329,95 @@ An API Key is not required to access this endpoint.
 </blockquote>
 <pre class="highlight ruby"><span class="c1"># Hashie::Mash Object examples</span>
 
-<span class="c1"># get the highest bid price</span>
-<span class="n">orderbook</span><span class="p">.</span><span class="nf">bid</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">price</span> <span class="c1"># 402.87</span>
-<span class="c1"># get the quantity of the lowest ask</span>
-<span class="n">orderbook</span><span class="p">.</span><span class="nf">ask</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">quantity</span> <span class="c1"># 1.35</span>
+<span class="c1"># get the most recent trade</span>
+<span class="n">trades</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">spent</span> <span class="c1"># 0.05</span>
+<span class="n">trades</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">spentCurrency</span> <span class="c1"># BTC</span>
+<span class="n">trades</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">earned</span> <span class="c1"># 30</span>
+<span class="n">trades</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">earnedCurrency</span> <span class="c1"># USD</span>
+<span class="n">trades</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">timestamp</span> <span class="c1"># 1410806124481</span>
 
-<span class="c1"># loop through all bids</span>
-<span class="n">orderbook</span><span class="p">.</span><span class="nf">bid</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">order</span><span class="o">|</span>
-<span class="n">order</span><span class="p">.</span><span class="nf">price</span>
-<span class="n">order</span><span class="p">.</span><span class="nf">quantity</span>
+<span class="c1"># loop through all trades </span>
+<span class="n">trades</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">trade</span><span class="o">|</span>
+  <span class="n">trade</span><span class="p">.</span><span class="nf">spent</span>
+  <span class="n">trade</span><span class="p">.</span><span class="nf">earned</span>
 <span class="k">end</span>
 </pre>
 <pre class="highlight python"><span class="c"># Dict Object</span>
-<span class="p">{</span>
-  <span class="s">"bid"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s">"price"</span><span class="p">:</span> <span class="mf">402.87</span><span class="p">,</span>
-      <span class="s">"quantity"</span><span class="p">:</span> <span class="mf">1.3</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="s">"price"</span><span class="p">:</span> <span class="mf">404.21</span><span class="p">,</span>
-      <span class="s">"quantity"</span><span class="p">:</span> <span class="mf">1.25</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s">"ask"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s">"price"</span><span class="p">:</span> <span class="mf">423.58</span><span class="p">,</span>
-      <span class="s">"quantity"</span><span class="p">:</span> <span class="mf">1.3</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="s">"price"</span><span class="p">:</span> <span class="mf">425.25</span><span class="p">,</span>
-      <span class="s">"quantity"</span><span class="p">:</span> <span class="mf">1.35</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s">"price_currency"</span><span class="p">:</span> <span class="s">"USD"</span><span class="p">,</span>
-  <span class="s">"quantity_currency"</span><span class="p">:</span> <span class="s">"BTC"</span>
-<span class="p">}</span>
+<span class="p">[</span> 
+  <span class="p">{</span>
+    <span class="n">spent</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+    <span class="n">spentCurrency</span><span class="p">:</span> <span class="s">'BTC'</span><span class="p">,</span>
+    <span class="n">earned</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="n">earnedCurrency</span><span class="p">:</span> <span class="s">'USD'</span><span class="p">,</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="mi">1410806083687</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="n">spent</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+    <span class="n">spentCurrency</span><span class="p">:</span> <span class="s">'BTC'</span><span class="p">,</span>
+    <span class="n">earned</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="n">earnedCurrency</span><span class="p">:</span> <span class="s">'USD'</span><span class="p">,</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="mi">1410805865743</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="n">spent</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+    <span class="n">spentCurrency</span><span class="p">:</span> <span class="s">'BTC'</span><span class="p">,</span>
+    <span class="n">earned</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="n">earnedCurrency</span><span class="p">:</span> <span class="s">'USD'</span><span class="p">,</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="mi">1410805865739</span>
+  <span class="p">}</span>
+<span class="p">]</span>
 </pre>
 <pre class="highlight javascript"><span class="c1">// JSON Object
 </span><span class="p">{</span>
-  <span class="s2">"bid"</span><span class="p">:</span> <span class="p">[</span>
+  <span class="na">trades</span><span class="p">:</span>
+  <span class="p">[</span> 
     <span class="p">{</span>
-      <span class="s2">"price"</span><span class="p">:</span> <span class="mf">402.87</span><span class="p">,</span>
-      <span class="s2">"quantity"</span><span class="p">:</span> <span class="mf">1.3</span>
+      <span class="na">spent</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+      <span class="na">spentCurrency</span><span class="p">:</span> <span class="s1">'BTC'</span><span class="p">,</span>
+      <span class="na">earned</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="na">earnedCurrency</span><span class="p">:</span> <span class="s1">'USD'</span><span class="p">,</span>
+      <span class="na">timestamp</span><span class="p">:</span> <span class="mi">1410806083687</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"price"</span><span class="p">:</span> <span class="mf">404.21</span><span class="p">,</span>
-      <span class="s2">"quantity"</span><span class="p">:</span> <span class="mf">1.25</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">"ask"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">"price"</span><span class="p">:</span> <span class="mf">423.58</span><span class="p">,</span>
-      <span class="s2">"quantity"</span><span class="p">:</span> <span class="mf">1.3</span>
+      <span class="na">spent</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+      <span class="na">spentCurrency</span><span class="p">:</span> <span class="s1">'BTC'</span><span class="p">,</span>
+      <span class="na">earned</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="na">earnedCurrency</span><span class="p">:</span> <span class="s1">'USD'</span><span class="p">,</span>
+      <span class="na">timestamp</span><span class="p">:</span> <span class="mi">1410805865743</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"price"</span><span class="p">:</span> <span class="mf">425.25</span><span class="p">,</span>
-      <span class="s2">"quantity"</span><span class="p">:</span> <span class="mf">1.35</span>
+      <span class="na">spent</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+      <span class="na">spentCurrency</span><span class="p">:</span> <span class="s1">'BTC'</span><span class="p">,</span>
+      <span class="na">earned</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+      <span class="na">earnedCurrency</span><span class="p">:</span> <span class="s1">'USD'</span><span class="p">,</span>
+      <span class="na">timestamp</span><span class="p">:</span> <span class="mi">1410805865739</span>
     <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">"price_currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-  <span class="s2">"quantity_currency"</span><span class="p">:</span> <span class="s2">"BTC"</span>
+  <span class="p">]</span>
 <span class="p">}</span>
 </pre>
 <pre class="highlight php"><span class="cp">&lt;?php</span>
 <span class="c1">// Array Object
-</span><span class="p">[</span>
-  <span class="s2">"bid"</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="p">[</span>
-      <span class="s2">"price"</span> <span class="o">=&gt;</span> <span class="mf">402.87</span><span class="p">,</span>
-      <span class="s2">"quantity"</span> <span class="o">=&gt;</span> <span class="mf">1.3</span>
-    <span class="p">],</span>
-    <span class="p">[</span>
-      <span class="s2">"price"</span> <span class="o">=&gt;</span> <span class="mf">404.21</span><span class="p">,</span>
-      <span class="s2">"quantity"</span> <span class="o">=&gt;</span> <span class="mf">1.25</span>
-    <span class="p">]</span>
+</span><span class="p">[</span> 
+  <span class="p">[</span>
+    <span class="s2">"spent"</span> <span class="o">=&gt;</span> <span class="mf">0.02</span><span class="p">,</span>
+    <span class="s2">"spentCurrency"</span> <span class="o">=&gt;</span> <span class="s1">'BTC'</span><span class="p">,</span>
+    <span class="s2">"earned"</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s2">"earnedCurrency"</span> <span class="o">=&gt;</span> <span class="s1">'USD'</span><span class="p">,</span>
+    <span class="s2">"timestamp"</span> <span class="o">=&gt;</span> <span class="mi">1410806083687</span>
   <span class="p">],</span>
-  <span class="s2">"ask"</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="p">[</span>
-      <span class="s2">"price"</span> <span class="o">=&gt;</span> <span class="mf">423.58</span><span class="p">,</span>
-      <span class="s2">"quantity"</span> <span class="o">=&gt;</span> <span class="mf">1.3</span>
-    <span class="p">],</span>
-    <span class="p">[</span>
-      <span class="s2">"price"</span> <span class="o">=&gt;</span> <span class="mf">425.25</span><span class="p">,</span>
-      <span class="s2">"quantity"</span> <span class="o">=&gt;</span> <span class="mf">1.35</span>
-    <span class="p">]</span>
+  <span class="p">[</span>
+    <span class="s2">"spent"</span> <span class="o">=&gt;</span> <span class="mf">0.02</span><span class="p">,</span>
+    <span class="s2">"spentCurrency"</span> <span class="o">=&gt;</span> <span class="s1">'BTC'</span><span class="p">,</span>
+    <span class="s2">"earned"</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s2">"earnedCurrency"</span> <span class="o">=&gt;</span> <span class="s1">'USD'</span><span class="p">,</span>
+    <span class="s2">"timestamp"</span> <span class="o">=&gt;</span> <span class="mi">1410805865743</span>
+  <span class="p">],</span>
+  <span class="p">[</span>
+    <span class="s2">"spent"</span> <span class="o">=&gt;</span> <span class="mf">0.01</span><span class="p">,</span>
+    <span class="s2">"spentCurrency"</span> <span class="o">=&gt;</span> <span class="s1">'BTC'</span><span class="p">,</span>
+    <span class="s2">"earned"</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s2">"earnedCurrency"</span> <span class="o">=&gt;</span> <span class="s1">'USD'</span><span class="p">,</span>
+    <span class="s2">"timestamp"</span> <span class="o">=&gt;</span> <span class="mi">1410805865739</span>
   <span class="p">]</span>
 <span class="p">]</span>
 <span class="cp">?&gt;</span>
