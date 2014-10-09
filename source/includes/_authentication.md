@@ -16,8 +16,8 @@ client = Buttercoin::Client.new(
 from buttercoin.client import ButtercoinClient
 
 client = ButtercoinClient(
-    public_key='<public_key>',
-    secret_key='<secret_key>',
+    api_key='<api_key>',
+    api_secret='<api_secret>',
     mode='<mode>'
     )
 ```
