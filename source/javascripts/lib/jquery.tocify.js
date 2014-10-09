@@ -33,7 +33,6 @@
         itemClass = "." + itemClassName,
         extendPageClassName = "tocify-extend-page",
         extendPageClass = "." + extendPageClassName;
-console.log("$.widget", (typeof $.widget === 'undefined'));
     // Calling the jQueryUI Widget Factory Method
     $.widget("toc.tocify", {
 
