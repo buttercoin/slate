@@ -16,7 +16,7 @@
       ignoreSelector: '.toc-ignore',
       highlightOffset: 60,
       scrollTo: -1,
-      scrollHistory: false,
+      scrollHistory: true,
       hashGenerator: function (text, element) {
         return element.prop('id');
       }
