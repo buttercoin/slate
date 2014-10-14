@@ -1416,7 +1416,7 @@ An API Key is not required to access this endpoint.
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST /v1/transactions/deposit</code></p>
 <h2 id='create-a-withdrawal'>Create a withdrawal</h2><pre class="highlight ruby"><span class="n">withdrawal</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="ss">:method</span> <span class="o">=&gt;</span> <span class="s2">"check"</span><span class="p">,</span>
+  <span class="ss">:method</span> <span class="o">=&gt;</span> <span class="s2">"us_ach"</span><span class="p">,</span>
   <span class="ss">:currency</span> <span class="o">=&gt;</span> <span class="s2">"USD"</span><span class="p">,</span>
   <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="s2">"500"</span>
 <span class="p">}</span>
@@ -1425,14 +1425,14 @@ An API Key is not required to access this endpoint.
 <pre class="highlight python"><span class="n">withdrawal</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">"currency"</span><span class="p">:</span> <span class="s">"USD"</span><span class="p">,</span>
   <span class="s">"amount"</span><span class="p">:</span> <span class="s">"30020.30"</span><span class="p">,</span>
-  <span class="s">"method"</span><span class="p">:</span> <span class="s">"check"</span> 
+  <span class="s">"method"</span><span class="p">:</span> <span class="s">"us_ach"</span> 
 <span class="p">}</span>
 <span class="n">client</span><span class="o">.</span><span class="n">create_transaction</span><span class="p">(</span><span class="n">withdrawal</span><span class="p">)</span>
 </pre>
 <pre class="highlight javascript"><span class="kd">var</span> <span class="nx">withdrawal</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>
   <span class="s2">"amount"</span><span class="p">:</span> <span class="s2">"30020.30"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"check"</span> 
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"us_ach"</span> 
 <span class="p">};</span>
 <span class="nx">client</span><span class="p">.</span><span class="nx">createWithdrawal</span><span class="p">(</span><span class="nx">withdrawal</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"cancel transaction err"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
@@ -1493,7 +1493,7 @@ An API Key is not required to access this endpoint.
 </thead><tbody>
 <tr>
 <td><code class="prettyprint">method</code></td>
-<td>enum: <code class="prettyprint">[&#39;check&#39;]</code>, required <code class="prettyprint">true</code></td>
+<td>enum: <code class="prettyprint">[&#39;us_ach&#39;]</code>, required <code class="prettyprint">true</code></td>
 </tr>
 <tr>
 <td><code class="prettyprint">currency</code></td>

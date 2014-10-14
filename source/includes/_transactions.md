@@ -356,7 +356,7 @@ Parameter | Description
 
 ```ruby
 withdrawal = {
-  :method => "check",
+  :method => "us_ach",
   :currency => "USD",
   :amount => "500"
 }
@@ -367,7 +367,7 @@ client.create_withdrawal(withdrawal)
 withdrawal = {
   "currency": "USD",
   "amount": "30020.30",
-  "method": "check" 
+  "method": "us_ach" 
 }
 client.create_transaction(withdrawal)
   ```
@@ -376,7 +376,7 @@ client.create_transaction(withdrawal)
 var withdrawal = {
   "currency": "USD",
   "amount": "30020.30",
-  "method": "check" 
+  "method": "us_ach" 
 };
 client.createWithdrawal(withdrawal, function (err, msg) {
   console.log("cancel transaction err", err);
@@ -445,7 +445,7 @@ Create a new withdrawal with the given params
 
 Parameter | Description
 --- | --- 
-`method` | enum: `['check']`, required `true`  
+`method` | enum: `['us_ach']`, required `true`  
 `currency` | enum: `['USD']`, required `true`  
 `amount` | `string`, required `true`
 
