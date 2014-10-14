@@ -7,20 +7,30 @@ Period | Limit
 Minute | Maximum of 120 requests 
 Day | Maximum of 86,400 requests (Avg. of 1 per second)
 
-## Unauthenticated
+> Requests exceeding the limit will include a 429 error response code.
 
-Unauthenticated rate limiting is considered on a per-IP basis.
+### HTTP Response Headers
 
-## Authenticated
-
-Authenticated rate limiting is considered on a per-account basis. Please [contact](mailto:api@buttercoin.com) us if you would like to increase the rate limits for your account.
-
-### HTTP Headers and Response codes
-
-The following headers are included with every API response:
+The following headers are applied per day to authenticated requests only:
 
 Header | Description
 ---|---
-`X-Rate-Limit-Limit` | The number of requests that can send within your rate limit window 
+`X-Request-Limit-Limit` | The number of requests you can send within the request limit window 
+`X-Request-Limit-Remaining` | The number of requests that you can send before you will exceed your request limit 
+`X-Request-Limit-Reset` | When your next request limit window will be reset (in UTC [epoch milliseconds](http://en.wikipedia.org/wiki/Unix_time))
+
+The following headers are applied per minute to public and authenticated requests:
+
+Header | Description
+---|---
+`X-Rate-Limit-Limit` | The number of requests you can send within your rate limit window 
 `X-Rate-Limit-Remaining` | The number of requests that you can send before you will exceed your rate limit 
 `X-Rate-Limit-Reset` | When your next rate limit window will be reset (in UTC [epoch milliseconds](http://en.wikipedia.org/wiki/Unix_time))
+
+## Public
+
+Public requests do not require an API key and secret.  Public rate limiting is considered on a per-IP basis.
+
+## Authenticated
+
+Authenticated requests require an API key and secret to access details specific to your account.  Authenticated rate limiting is considered on a per-account basis. Please [contact](mailto:api@buttercoin.com) us if you would like to increase the rate limits for your account.

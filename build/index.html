@@ -73,7 +73,7 @@
 <p>To learn more about the Sandbox API environment which uses testnet bitcoins, <a href="#sandbox">click here</a></p>
 
 <p><aside class="warning">
-Buttercoin Support will never ask you for your API key. Please report to us any emails you receive that request this information.
+Buttercoin will never ask you for your API key or secret. Please <a href="mailto:security@buttercoin.com">report</a> to us any emails you receive that request this information.
 </aside></p>
 
           <h1 id='libraries'>Libraries</h1>
@@ -1675,8 +1675,34 @@ An API Key is not required to access this endpoint.
 <td>Maximum of 86,400 requests (Avg. of 1 per second)</td>
 </tr>
 </tbody></table>
-<h3 id='http-headers-and-response-codes'>HTTP Headers and Response codes</h3>
-<p>The following headers are included with every API response:</p>
+
+<blockquote>
+<p>Requests exceeding the limit will include a 429 error response code.</p>
+</blockquote>
+<h3 id='http-response-headers'>HTTP Response Headers</h3>
+<p>The following headers are applied per day to authenticated requests only:</p>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">X-Request-Limit-Limit</code></td>
+<td>The number of requests you can send within the request limit window</td>
+</tr>
+<tr>
+<td><code class="prettyprint">X-Request-Limit-Remaining</code></td>
+<td>The number of requests that you can send before you will exceed your request limit</td>
+</tr>
+<tr>
+<td><code class="prettyprint">X-Request-Limit-Reset</code></td>
+<td>When your next request limit window will be reset (in UTC <a href="http://en.wikipedia.org/wiki/Unix_time">epoch milliseconds</a>)</td>
+</tr>
+</tbody></table>
+
+<p>The following headers are applied per minute to public and authenticated requests:</p>
 
 <table><thead>
 <tr>
@@ -1686,17 +1712,21 @@ An API Key is not required to access this endpoint.
 </thead><tbody>
 <tr>
 <td><code class="prettyprint">X-Rate-Limit-Limit</code></td>
-<td>The rate limit ceiling for that given request</td>
+<td>The number of requests you can send within your rate limit window</td>
 </tr>
 <tr>
 <td><code class="prettyprint">X-Rate-Limit-Remaining</code></td>
-<td>The number of requests left for the 15 minute window</td>
+<td>The number of requests that you can send before you will exceed your rate limit</td>
 </tr>
 <tr>
 <td><code class="prettyprint">X-Rate-Limit-Reset</code></td>
-<td>The remaining window before the rate limit resets in UTC <a href="http://en.wikipedia.org/wiki/Unix_time">epoch seconds</a></td>
+<td>When your next rate limit window will be reset (in UTC <a href="http://en.wikipedia.org/wiki/Unix_time">epoch milliseconds</a>)</td>
 </tr>
 </tbody></table>
+<h2 id='public'>Public</h2>
+<p>Public requests do not require an API key and secret.  Public rate limiting is considered on a per-IP basis.</p>
+<h2 id='authenticated'>Authenticated</h2>
+<p>Authenticated requests require an API key and secret to access details specific to your account.  Authenticated rate limiting is considered on a per-account basis. Please <a href="mailto:api@buttercoin.com">contact</a> us if you would like to increase the rate limits for your account.</p>
 
           <h1 id='errors'>Errors</h1>
 <blockquote>
