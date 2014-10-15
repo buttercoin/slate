@@ -1506,6 +1506,10 @@ An API Key is not required to access this endpoint.
 </tbody></table>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST /v1/transactions/withdraw</code></p>
+
+<p><aside class="info">
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://www.buttercoin.com/#/settings#tab-notification">here</a>.
+</aside></p>
 <h2 id='send-bitcoins'>Send bitcoins</h2><pre class="highlight ruby"><span class="n">trxn</span> <span class="o">=</span> <span class="p">{</span>
   <span class="ss">:currency</span> <span class="o">=&gt;</span> <span class="s2">"BTC"</span><span class="p">,</span>
   <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="s2">"100.231231"</span><span class="p">,</span>
@@ -1598,6 +1602,10 @@ An API Key is not required to access this endpoint.
 </tbody></table>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST /v1/transactions/send</code></p>
+
+<p><aside class="info">
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://www.buttercoin.com/#/settings#tab-notification">here</a>.
+</aside></p>
 <h2 id='cancel-a-transaction'>Cancel a transaction</h2>
 <blockquote>
 <p>Success Response Code: 204</p>

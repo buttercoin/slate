@@ -453,6 +453,10 @@ Parameter | Description
 
 `POST /v1/transactions/withdraw`
 
+<aside class="info">
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting [here](https://www.buttercoin.com/#/settings#tab-notifications).
+</aside>
+
 ## Send bitcoins
 
 ```ruby
@@ -554,6 +558,10 @@ Parameter | Description
 ### HTTP Request
 
 `POST /v1/transactions/send`
+
+<aside class="info">
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting [here](https://www.buttercoin.com/#/settings#tab-notifications).
+</aside>
 
 ## Cancel a transaction
 
