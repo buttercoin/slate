@@ -121,12 +121,10 @@ This endpoint retrieves all transactions based on the given query.
 
 Parameter | Description
 --- | ---
-`status` | enum: `['opened', 'reopened', 'filled', 'canceled']`  
-`side` | enum: `['buy', 'sell']`  
-`transactionType` | enum: `['market', 'limit']`  
+`status` | enum: `['pending', 'processing', 'funded', 'canceled', 'failed']`  
+`transactionType` | enum: `['deposit', 'withdrawal']`  
 `dateMin` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`  
 `dateMax` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`
-
 
 ## Get a single transaction
 
@@ -347,6 +345,10 @@ Parameter | Description
 `method` | enum: `['wire']`, required `true`  
 `currency` | enum: `['USD']`, required `true`  
 `amount` | `string`, required `true`
+
+<aside class="info">
+Please contact Buttercoin support before creating a USD deposit using the API.
+</aside>
 
 ### HTTP Request
 

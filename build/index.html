@@ -1186,15 +1186,11 @@ An API Key is not required to access this endpoint.
 </thead><tbody>
 <tr>
 <td><code class="prettyprint">status</code></td>
-<td>enum: <code class="prettyprint">[&#39;opened&#39;, &#39;reopened&#39;, &#39;filled&#39;, &#39;canceled&#39;]</code></td>
-</tr>
-<tr>
-<td><code class="prettyprint">side</code></td>
-<td>enum: <code class="prettyprint">[&#39;buy&#39;, &#39;sell&#39;]</code></td>
+<td>enum: <code class="prettyprint">[&#39;pending&#39;, &#39;processing&#39;, &#39;funded&#39;, &#39;canceled&#39;, &#39;failed&#39;]</code></td>
 </tr>
 <tr>
 <td><code class="prettyprint">transactionType</code></td>
-<td>enum: <code class="prettyprint">[&#39;market&#39;, &#39;limit&#39;]</code></td>
+<td>enum: <code class="prettyprint">[&#39;deposit&#39;, &#39;withdrawal&#39;]</code></td>
 </tr>
 <tr>
 <td><code class="prettyprint">dateMin</code></td>
@@ -1413,6 +1409,10 @@ An API Key is not required to access this endpoint.
 <td><code class="prettyprint">string</code>, required <code class="prettyprint">true</code></td>
 </tr>
 </tbody></table>
+
+<p><aside class="info">
+Please contact Buttercoin support before creating a USD deposit using the API.
+</aside></p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST /v1/transactions/deposit</code></p>
 <h2 id='create-a-withdrawal'>Create a withdrawal</h2><pre class="highlight ruby"><span class="n">withdrawal</span> <span class="o">=</span> <span class="p">{</span>
@@ -1508,7 +1508,7 @@ An API Key is not required to access this endpoint.
 <p><code class="prettyprint">POST /v1/transactions/withdraw</code></p>
 
 <p><aside class="info">
-For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://www.buttercoin.com/#/settings#tab-notification">here</a>.
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://www.buttercoin.com/#/settings#tab-notifications">here</a>.
 </aside></p>
 <h2 id='send-bitcoins'>Send bitcoins</h2><pre class="highlight ruby"><span class="n">trxn</span> <span class="o">=</span> <span class="p">{</span>
   <span class="ss">:currency</span> <span class="o">=&gt;</span> <span class="s2">"BTC"</span><span class="p">,</span>
@@ -1604,7 +1604,7 @@ For your security, the default setting for withdrawals requires email confirmati
 <p><code class="prettyprint">POST /v1/transactions/send</code></p>
 
 <p><aside class="info">
-For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://www.buttercoin.com/#/settings#tab-notification">here</a>.
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://www.buttercoin.com/#/settings#tab-notifications">here</a>.
 </aside></p>
 <h2 id='cancel-a-transaction'>Cancel a transaction</h2>
 <blockquote>
