@@ -77,7 +77,7 @@ Encode a get request like this:
 
 Encode a post request like this: 
 
-`1403755197367http://api.buttercoin.com/v1/orders{"instrument":"BTC_USD","side":"buy","orderType":"limit","quantity":1,"price":600.01}`
+`1403755197367https://api.buttercoin.com/v1/orders{"instrument":"BTC_USD","side":"buy","orderType":"limit","quantity":1,"price":600.01}`
 
 Still not sure?  Find code examples [here](https://github.com/buttercoin/buttercoinsdk-node/blob/master/index.js#L32), [here](https://github.com/buttercoin/buttercoinsdk-php/blob/master/src/Client/ButtercoinClient.php#L144), [here](https://github.com/buttercoin/buttercoinsdk-python/blob/master/buttercoin/api.py#L101), and [here](https://github.com/buttercoin/buttercoinsdk-ruby/blob/master/lib/buttercoin/client.rb#L91).
 
