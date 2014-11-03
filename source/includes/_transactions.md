@@ -136,7 +136,7 @@ transaction_id = '538bdc82848a604c007ceac6'
 client.get_transaction_by_id(transaction_id)
 
 # For convenience, you can also get transaction by full URL
-url = 'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+url = 'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 client.get_transaction_by_url(url)
   ```
 
@@ -146,7 +146,7 @@ transaction_id = '538bdc82848a604c007ceac6'
 client.get_transaction_by_id(transaction_id)
 
 # For convenience, you can also get transaction by full URL
-url = 'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+url = 'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 client.get_transaction_by_url(url)
 ```
 
@@ -159,7 +159,7 @@ client.getTransactionById(transactionId, function (err, transaction) {
 });
 
 // For convenience, you can also get transaction by full URL
-var url = 'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6';
+var url = 'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6';
 client.getTransactionByUrl(url, function (err, transaction) {
   console.log("transaction err", err);
   console.log("transaction", transaction);
@@ -173,7 +173,7 @@ $transactionId = '538bdc82848a604c007ceac6';
 $client->getTransactionById($transactionId);
 
 // For convenience, you can also get transaction by full URL
-$url = 'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6';
+$url = 'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6';
 $client->getTransactionByUrl($url);
 ?>
 ```
@@ -318,23 +318,23 @@ $client->createDeposit($deposit);
 
 ```ruby
 # string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ```
 
 ```python
 # string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ```
 
 ```javascript
 // string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ```
 
 ```php
 <?php
 // string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ?>
 ```
 
@@ -423,23 +423,23 @@ response.message # This operation requires email confirmation
 
 ```ruby
 # string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ```
 
 ```python
 # string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ```
 
 ```javascript
 // string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ```
 
 ```php
 <?php
 // string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ?>
 ```
 
@@ -456,7 +456,7 @@ Parameter | Description
 `POST /v1/transactions/withdraw`
 
 <aside class="info">
-For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting [here](https://www.buttercoin.com/#/settings#tab-notifications).
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting [here](https://buttercoin.com/#/settings#tab-notifications).
 </aside>
 
 ## Send bitcoins
@@ -534,18 +534,18 @@ response.message # This operation requires email confirmation
 
 ```python
 # string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ```
 
 ```javascript
 // string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ```
 
 ```php
 <?php
 // string
-'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
+'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'
 ?>
 ```
 
@@ -562,7 +562,7 @@ Parameter | Description
 `POST /v1/transactions/send`
 
 <aside class="info">
-For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting [here](https://www.buttercoin.com/#/settings#tab-notifications).
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting [here](https://buttercoin.com/#/settings#tab-notifications).
 </aside>
 
 ## Cancel a transaction
