@@ -183,7 +183,7 @@ You must always keep your API Keys secure to make sure no one can access your ac
 
 <p>Encode a post request like this: </p>
 
-<p><code class="prettyprint">1403755197367http://api.buttercoin.com/v1/orders{&quot;instrument&quot;:&quot;BTC_USD&quot;,&quot;side&quot;:&quot;buy&quot;,&quot;orderType&quot;:&quot;limit&quot;,&quot;quantity&quot;:1,&quot;price&quot;:600.01}</code></p>
+<p><code class="prettyprint">1403755197367https://api.buttercoin.com/v1/orders{&quot;instrument&quot;:&quot;BTC_USD&quot;,&quot;side&quot;:&quot;buy&quot;,&quot;orderType&quot;:&quot;limit&quot;,&quot;quantity&quot;:1,&quot;price&quot;:600.01}</code></p>
 
 <p>Still not sure?  Find code examples <a href="https://github.com/buttercoin/buttercoinsdk-node/blob/master/index.js#L32">here</a>, <a href="https://github.com/buttercoin/buttercoinsdk-php/blob/master/src/Client/ButtercoinClient.php#L144">here</a>, <a href="https://github.com/buttercoin/buttercoinsdk-python/blob/master/buttercoin/api.py#L101">here</a>, and <a href="https://github.com/buttercoin/buttercoinsdk-ruby/blob/master/lib/buttercoin/client.rb#L91">here</a>.</p>
 
@@ -772,7 +772,7 @@ An API Key is not required to access this endpoint.
 <span class="n">client</span><span class="p">.</span><span class="nf">get_order_by_id</span><span class="p">(</span><span class="n">order_id</span><span class="p">)</span>
 
 <span class="c1"># For convenience, you can also get order by full URL</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
 <span class="n">client</span><span class="p">.</span><span class="nf">get_order_by_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre>
 <pre class="highlight python"><span class="c"># Get order with the ID</span>
@@ -780,7 +780,7 @@ An API Key is not required to access this endpoint.
 <span class="n">client</span><span class="o">.</span><span class="n">get_order_by_id</span><span class="p">(</span><span class="n">order_id</span><span class="p">)</span>
 
 <span class="c"># For convenience, you can also get order by full URL</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
 <span class="n">client</span><span class="o">.</span><span class="n">get_order_by_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre>
 <pre class="highlight javascript"><span class="c1">// Get order with the ID
@@ -791,7 +791,7 @@ An API Key is not required to access this endpoint.
 <span class="p">});</span>
 
 <span class="c1">// For convenience, you can also get order by full URL
-</span><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span><span class="p">;</span>
+</span><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span><span class="p">;</span>
 <span class="nx">client</span><span class="p">.</span><span class="nx">getOrderByUrl</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">order</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"order err"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"order"</span><span class="p">,</span> <span class="nx">order</span><span class="p">);</span>
@@ -803,7 +803,7 @@ An API Key is not required to access this endpoint.
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getOrderById</span><span class="p">(</span><span class="nv">$orderId</span><span class="p">);</span>
 
 <span class="c1">// For convenience, you can also get order by full URL
-</span><span class="nv">$url</span> <span class="o">=</span> <span class="s1">'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span><span class="p">;</span>
+</span><span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span><span class="p">;</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getOrderByUrl</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </pre>
@@ -974,17 +974,17 @@ An API Key is not required to access this endpoint.
 <p>A successful order creation returns the url location of the new order in the response location header with HTTP Response Code of 202:</p>
 </blockquote>
 <pre class="highlight ruby"><span class="c1"># string</span>
-<span class="s1">'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
+<span class="s1">'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
 </pre>
 <pre class="highlight python"><span class="c"># string</span>
-<span class="s">'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
+<span class="s">'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
 </pre>
 <pre class="highlight javascript"><span class="c1">// string
-</span><span class="s1">'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
+</span><span class="s1">'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
 </pre>
 <pre class="highlight php"><span class="cp">&lt;?php</span>
 <span class="c1">// string
-</span><span class="s1">'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
+</span><span class="s1">'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
 <span class="cp">?&gt;</span>
 </pre>
 
@@ -1210,7 +1210,7 @@ An API Key is not required to access this endpoint.
 <span class="n">client</span><span class="p">.</span><span class="nf">get_transaction_by_id</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">)</span>
 
 <span class="c1"># For convenience, you can also get transaction by full URL</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 <span class="n">client</span><span class="p">.</span><span class="nf">get_transaction_by_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre>
 <pre class="highlight python"><span class="c"># Get transaction with the ID</span>
@@ -1218,7 +1218,7 @@ An API Key is not required to access this endpoint.
 <span class="n">client</span><span class="o">.</span><span class="n">get_transaction_by_id</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">)</span>
 
 <span class="c"># For convenience, you can also get transaction by full URL</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 <span class="n">client</span><span class="o">.</span><span class="n">get_transaction_by_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre>
 <pre class="highlight javascript"><span class="c1">// Get transaction with the ID
@@ -1229,7 +1229,7 @@ An API Key is not required to access this endpoint.
 <span class="p">});</span>
 
 <span class="c1">// For convenience, you can also get transaction by full URL
-</span><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span><span class="p">;</span>
+</span><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span><span class="p">;</span>
 <span class="nx">client</span><span class="p">.</span><span class="nx">getTransactionByUrl</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">transaction</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"transaction err"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"transaction"</span><span class="p">,</span> <span class="nx">transaction</span><span class="p">);</span>
@@ -1241,7 +1241,7 @@ An API Key is not required to access this endpoint.
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getTransactionById</span><span class="p">(</span><span class="nv">$transactionId</span><span class="p">);</span>
 
 <span class="c1">// For convenience, you can also get transaction by full URL
-</span><span class="nv">$url</span> <span class="o">=</span> <span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span><span class="p">;</span>
+</span><span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span><span class="p">;</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getTransactionByUrl</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </pre>
@@ -1374,17 +1374,17 @@ An API Key is not required to access this endpoint.
 <p>A successful deposit transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202:</p>
 </blockquote>
 <pre class="highlight ruby"><span class="c1"># string</span>
-<span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+<span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 </pre>
 <pre class="highlight python"><span class="c"># string</span>
-<span class="s">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+<span class="s">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 </pre>
 <pre class="highlight javascript"><span class="c1">// string
-</span><span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+</span><span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 </pre>
 <pre class="highlight php"><span class="cp">&lt;?php</span>
 <span class="c1">// string
-</span><span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+</span><span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 <span class="cp">?&gt;</span>
 </pre>
 
@@ -1469,17 +1469,17 @@ Please contact Buttercoin support before creating a USD deposit using the API.
 <p>A successful withdrawal transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202</p>
 </blockquote>
 <pre class="highlight ruby"><span class="c1"># string</span>
-<span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+<span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 </pre>
 <pre class="highlight python"><span class="c"># string</span>
-<span class="s">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+<span class="s">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 </pre>
 <pre class="highlight javascript"><span class="c1">// string
-</span><span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+</span><span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 </pre>
 <pre class="highlight php"><span class="cp">&lt;?php</span>
 <span class="c1">// string
-</span><span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+</span><span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 <span class="cp">?&gt;</span>
 </pre>
 
@@ -1508,7 +1508,7 @@ Please contact Buttercoin support before creating a USD deposit using the API.
 <p><code class="prettyprint">POST /v1/transactions/withdraw</code></p>
 
 <p><aside class="info">
-For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://www.buttercoin.com/#/settings#tab-notifications">here</a>.
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://buttercoin.com/#/settings#tab-notifications">here</a>.
 </aside></p>
 <h2 id='send-bitcoins'>Send bitcoins</h2><pre class="highlight ruby"><span class="n">trxn</span> <span class="o">=</span> <span class="p">{</span>
   <span class="ss">:currency</span> <span class="o">=&gt;</span> <span class="s2">"BTC"</span><span class="p">,</span>
@@ -1568,14 +1568,14 @@ For your security, the default setting for withdrawals requires email confirmati
 <span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 </pre>
 <pre class="highlight python"><span class="c"># string</span>
-<span class="s">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+<span class="s">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 </pre>
 <pre class="highlight javascript"><span class="c1">// string
-</span><span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+</span><span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 </pre>
 <pre class="highlight php"><span class="cp">&lt;?php</span>
 <span class="c1">// string
-</span><span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
+</span><span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
 <span class="cp">?&gt;</span>
 </pre>
 
@@ -1604,7 +1604,7 @@ For your security, the default setting for withdrawals requires email confirmati
 <p><code class="prettyprint">POST /v1/transactions/send</code></p>
 
 <p><aside class="info">
-For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://www.buttercoin.com/#/settings#tab-notifications">here</a>.
+For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://buttercoin.com/#/settings#tab-notifications">here</a>.
 </aside></p>
 <h2 id='cancel-a-transaction'>Cancel a transaction</h2>
 <blockquote>
@@ -1685,7 +1685,7 @@ For your security, the default setting for withdrawals requires email confirmati
 </tbody></table>
 
 <blockquote>
-<p>Requests exceeding the limit will include a 429 error response code.</p>
+<p>Requests exceeding the limit will receive a &lsquo;429 Too Many Requests&rsquo; response.</p>
 </blockquote>
 <h3 id='http-response-headers'>HTTP Response Headers</h3>
 <p>The following headers are applied per day to authenticated requests only:</p>
@@ -1734,7 +1734,7 @@ For your security, the default setting for withdrawals requires email confirmati
 <h2 id='public'>Public</h2>
 <p>Public requests do not require an API key and secret.  Public rate limiting is considered on a per-IP basis.</p>
 <h2 id='authenticated'>Authenticated</h2>
-<p>Authenticated requests require an API key and secret to access details specific to your account.  Authenticated rate limiting is considered on a per-account basis. Please <a href="mailto:api@buttercoin.com">contact</a> us if you would like to increase the rate limits for your account.</p>
+<p>Authenticated requests require an API key and secret to access details specific to your account.  Authenticated rate limiting is considered on a per-account basis. Please <a href="mailto:api@buttercoin.com">contact us</a> if you would like to increase the rate limits for your account.</p>
 
           <h1 id='errors'>Errors</h1>
 <blockquote>
