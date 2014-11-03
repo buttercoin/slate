@@ -7,7 +7,7 @@ Period | Limit
 Minute | Maximum of 120 requests 
 Day | Maximum of 86,400 requests (Avg. of 1 per second)
 
-> Requests exceeding the limit will include a 429 error response code.
+> Requests exceeding the limit will receive a '429 Too Many Requests' response.
 
 ### HTTP Response Headers
 
@@ -33,4 +33,4 @@ Public requests do not require an API key and secret.  Public rate limiting is c
 
 ## Authenticated
 
-Authenticated requests require an API key and secret to access details specific to your account.  Authenticated rate limiting is considered on a per-account basis. Please [contact](mailto:api@buttercoin.com) us if you would like to increase the rate limits for your account.
+Authenticated requests require an API key and secret to access details specific to your account.  Authenticated rate limiting is considered on a per-account basis. Please [contact us](mailto:api@buttercoin.com) if you would like to increase the rate limits for your account.
