@@ -134,7 +134,7 @@ order_id = 'e3afed81-4a9c-4480-a78a-e0872408b95a'
 client.get_order_by_id(order_id)
 
 # For convenience, you can also get order by full URL
-url = 'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
+url = 'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
 client.get_order_by_url(url)
 ```
 
@@ -144,7 +144,7 @@ order_id = 'e3afed81-4a9c-4480-a78a-e0872408b95a'
 client.get_order_by_id(order_id)
 
 # For convenience, you can also get order by full URL
-url = 'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
+url = 'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
 client.get_order_by_url(url)
 ```
 
@@ -157,7 +157,7 @@ client.getOrderById(orderId, function (err, order) {
 });
 
 // For convenience, you can also get order by full URL
-var url = 'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09';
+var url = 'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09';
 client.getOrderByUrl(url, function (err, order) {
   console.log("order err", err);
   console.log("order", order);
@@ -171,7 +171,7 @@ $orderId = 'e3afed81-4a9c-4480-a78a-e0872408b95a';
 $client->getOrderById($orderId);
 
 // For convenience, you can also get order by full URL
-$url = 'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09';
+$url = 'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09';
 $client->getOrderByUrl($url);
 ?>
 ```
@@ -355,23 +355,23 @@ $client->createOrder($order);
 
 ```ruby
 # string
-'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
+'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
 ```
 
 ```python
 # string
-'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
+'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
 ```
 
 ```javascript
 // string
-'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
+'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
 ```
 
 ```php
 <?php
 // string
-'http://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
+'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'
 ?>
 ```
 
