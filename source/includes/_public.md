@@ -1,5 +1,7 @@
 # Public
 
+These endpoints do not require an API key for access.
+
 ## Get the orderbook
 
 > Success Response Code: 200

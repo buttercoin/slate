@@ -1,5 +1,7 @@
 # Key
 
+Get information about the API key you are using
+
 ## Get permissions
 
 > Success Response Code: 200

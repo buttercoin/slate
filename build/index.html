@@ -187,7 +187,9 @@ You must always keep your API Keys secure to make sure no one can access your ac
 
 <p>Still not sure?  Find code examples <a href="https://github.com/buttercoin/buttercoinsdk-node/blob/master/index.js#L32">here</a>, <a href="https://github.com/buttercoin/buttercoinsdk-php/blob/master/src/Client/ButtercoinClient.php#L144">here</a>, <a href="https://github.com/buttercoin/buttercoinsdk-python/blob/master/buttercoin/api.py#L101">here</a>, and <a href="https://github.com/buttercoin/buttercoinsdk-ruby/blob/master/lib/buttercoin/client.rb#L91">here</a>.</p>
 
-          <h1 id='public'>Public</h1><h2 id='get-the-orderbook'>Get the orderbook</h2>
+          <h1 id='public'>Public</h1>
+<p>These endpoints do not require an API key for access.</p>
+<h2 id='get-the-orderbook'>Get the orderbook</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -492,7 +494,9 @@ An API Key is not required to access this endpoint.
 An API Key is not required to access this endpoint.
 </aside></p>
 
-          <h1 id='key'>Key</h1><h2 id='get-permissions'>Get permissions</h2>
+          <h1 id='key'>Key</h1>
+<p>Get information about the API key you are using</p>
+<h2 id='get-permissions'>Get permissions</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -549,7 +553,9 @@ An API Key is not required to access this endpoint.
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/key</code></p>
 
-          <h1 id='account'>Account</h1><h2 id='get-account-balances'>Get account balances</h2>
+          <h1 id='account'>Account</h1>
+<p>Retrieve data specific to your Buttercoin account</p>
+<h2 id='get-account-balances'>Get account balances</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -638,7 +644,9 @@ An API Key is not required to access this endpoint.
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/account/depositAddress</code></p>
 
-          <h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get all orders</h2>
+          <h1 id='orders'>Orders</h1>
+<p>Orders are offers to either buy or sell bitcoins.  We support market and limit orders.</p>
+<h2 id='get-all-orders'>Get all orders</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>
@@ -684,6 +692,12 @@ An API Key is not required to access this endpoint.
       <span class="p">{</span>
         <span class="s">"eventType"</span><span class="p">:</span> <span class="s">"created"</span><span class="p">,</span>
         <span class="s">"eventDate"</span><span class="p">:</span> <span class="s">"2014-05-06T13:15:30Z"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s">"eventType"</span><span class="p">:</span> <span class="s">"filled"</span><span class="p">,</span>
+        <span class="s">"eventDate"</span><span class="p">:</span> <span class="s">"2014-05-06T13:15:32Z"</span>
+        <span class="s">"offered"</span><span class="p">:</span> <span class="s">"33.21"</span><span class="p">,</span>
+        <span class="s">"received"</span><span class="p">:</span> <span class="s">"0.2"</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">}</span>
@@ -704,6 +718,12 @@ An API Key is not required to access this endpoint.
       <span class="p">{</span>
         <span class="s2">"eventType"</span><span class="p">:</span> <span class="s2">"created"</span><span class="p">,</span>
         <span class="s2">"eventDate"</span><span class="p">:</span> <span class="s2">"2014-05-06T13:15:30Z"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">"eventType"</span><span class="p">:</span> <span class="s2">"filled"</span><span class="p">,</span>
+        <span class="s2">"eventDate"</span><span class="p">:</span> <span class="s2">"2014-05-06T13:15:32Z"</span><span class="p">,</span>
+        <span class="s2">"offered"</span><span class="p">:</span> <span class="s2">"33.21"</span><span class="p">,</span>
+        <span class="s2">"received"</span><span class="p">:</span> <span class="s2">"0.2"</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">}</span>
@@ -725,6 +745,12 @@ An API Key is not required to access this endpoint.
       <span class="p">[</span>
         <span class="s2">"eventType"</span> <span class="o">=&gt;</span> <span class="s2">"created"</span><span class="p">,</span>
         <span class="s2">"eventDate"</span> <span class="o">=&gt;</span> <span class="s2">"2014-05-06T13:15:30Z"</span>
+      <span class="p">],</span>
+      <span class="p">[</span>
+        <span class="s2">"eventType"</span> <span class="o">=&gt;</span> <span class="s2">"filled"</span><span class="p">,</span>
+        <span class="s2">"eventDate"</span> <span class="o">=&gt;</span> <span class="s2">"2014-05-06T13:15:32Z"</span><span class="p">,</span>
+        <span class="s2">"offered"</span> <span class="o">=&gt;</span> <span class="s2">"33.21"</span><span class="p">,</span>
+        <span class="s2">"received"</span> <span class="o">=&gt;</span> <span class="s2">"0.2"</span>
       <span class="p">]</span>
     <span class="p">]</span>
   <span class="p">]</span>
@@ -763,6 +789,11 @@ An API Key is not required to access this endpoint.
 <td>format: ISO-8601, e.g. <code class="prettyprint">&#39;2014-05-06T13:15:30Z&#39;</code></td>
 </tr>
 </tbody></table>
+<h3 id='querying-multiple-order-statuses'>Querying Multiple Order Statuses</h3>
+<p>To search for multiple order statuses, use comma separated values:
+<code class="prettyprint">&#39;opened,partial-filled&#39;</code></p>
+<h3 id='calculate-price'>Calculate Price</h3>
+<p>To calculate the price you paid for each order, you can check <code class="prettyprint">filled</code> events in the response. The <code class="prettyprint">offered</code> field corresponds to the total amount paid in <code class="prettyprint">priceCurrency</code>, while <code class="prettyprint">received</code> corresponds to the total <code class="prettyprint">quantityCurrency</code> received.  Each <code class="prettyprint">filled</code> event is executed separately, and could have different prices depending on availability in the order book.</p>
 <h2 id='get-a-single-order'>Get a single order</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
@@ -1076,7 +1107,9 @@ An API Key is not required to access this endpoint.
 </tr>
 </tbody></table>
 
-          <h1 id='transactions'>Transactions</h1><h2 id='get-all-transactions'>Get all transactions</h2>
+          <h1 id='transactions'>Transactions</h1>
+<p>Transactions are deposits and withdrawals of fiat currency and bitcoin.</p>
+<h2 id='get-all-transactions'>Get all transactions</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
 </blockquote>

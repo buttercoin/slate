@@ -1,5 +1,7 @@
 # Account
 
+Retrieve data specific to your Buttercoin account
+
 ## Get account balances
 
 > Success Response Code: 200

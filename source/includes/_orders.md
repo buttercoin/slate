@@ -1,5 +1,7 @@
 # Orders
 
+Orders are offers to either buy or sell bitcoins.  We support market and limit orders.
+
 ## Get all orders 
 
 > Success Response Code: 200
@@ -55,6 +57,12 @@ end
       {
         "eventType": "created",
         "eventDate": "2014-05-06T13:15:30Z"
+      },
+      {
+      	"eventType": "filled",
+        "eventDate": "2014-05-06T13:15:32Z"
+        "offered": "33.21",
+        "received": "0.2"
       }
     ]
   }
@@ -77,6 +85,12 @@ end
       {
         "eventType": "created",
         "eventDate": "2014-05-06T13:15:30Z"
+      },
+      {
+        "eventType": "filled",
+        "eventDate": "2014-05-06T13:15:32Z",
+        "offered": "33.21",
+        "received": "0.2"
       }
     ]
   }
@@ -100,6 +114,12 @@ end
       [
         "eventType" => "created",
         "eventDate" => "2014-05-06T13:15:30Z"
+      ],
+      [
+        "eventType" => "filled",
+        "eventDate" => "2014-05-06T13:15:32Z",
+        "offered" => "33.21",
+        "received" => "0.2"
       ]
     ]
   ]
@@ -123,6 +143,14 @@ Parameter | Description
 `dateMin` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`  
 `dateMax` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`
 
+### Querying Multiple Order Statuses
+
+To search for multiple order statuses, use comma separated values:
+`'opened,partial-filled'`
+
+### Calculate Price
+
+To calculate the price you paid for each order, you can check `filled` events in the response. The `offered` field corresponds to the total amount paid in `priceCurrency`, while `received` corresponds to the total `quantityCurrency` received.  Each `filled` event is executed separately, and could have different prices depending on availability in the order book.
 
 ## Get a single order
 

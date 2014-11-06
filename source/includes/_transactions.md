@@ -1,5 +1,7 @@
 # Transactions
 
+Transactions are deposits and withdrawals of fiat currency and bitcoin.
+
 ## Get all transactions 
 
 > Success Response Code: 200
