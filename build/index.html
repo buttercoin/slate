@@ -1711,38 +1711,12 @@ For your security, the default setting for withdrawals requires email confirmati
 <td>Minute</td>
 <td>Maximum of 120 requests</td>
 </tr>
-<tr>
-<td>Day</td>
-<td>Maximum of 86,400 requests (Avg. of 1 per second)</td>
-</tr>
 </tbody></table>
 
 <blockquote>
 <p>Requests exceeding the limit will receive a &lsquo;429 Too Many Requests&rsquo; response.</p>
 </blockquote>
 <h3 id='http-response-headers'>HTTP Response Headers</h3>
-<p>The following headers are applied per day to authenticated requests only:</p>
-
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code class="prettyprint">X-Request-Limit-Limit</code></td>
-<td>The number of requests you can send within the request limit window</td>
-</tr>
-<tr>
-<td><code class="prettyprint">X-Request-Limit-Remaining</code></td>
-<td>The number of requests that you can send before you will exceed your request limit</td>
-</tr>
-<tr>
-<td><code class="prettyprint">X-Request-Limit-Reset</code></td>
-<td>When your next request limit window will be reset (in UTC <a href="http://en.wikipedia.org/wiki/Unix_time">epoch milliseconds</a>)</td>
-</tr>
-</tbody></table>
-
 <p>The following headers are applied per minute to public and authenticated requests:</p>
 
 <table><thead>
