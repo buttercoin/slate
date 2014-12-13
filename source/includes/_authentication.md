@@ -56,7 +56,7 @@ X-Buttercoin-Date: <CURRENT_TIMESTAMP>
 
 > The client will automatically sign your requests with the proper headers.
 
-The Buttercoin API provides one publicly accessible endpoint to get the current ticker price and another to view the current exchange order book. All other API calls require a valid API Access Key and secure authentication.
+The Buttercoin API provides one publicly accessible endpoint to get the current ticker price and another to view the current order book. All other API calls require a valid API Access Key and secure authentication.
 
 <aside class="warning">
 You must always keep your API Keys secure to make sure no one can access your account.  If you think a key might be compromised, simply revoke your API key [here](https://www.buttercoin.com/#/api).
@@ -79,6 +79,6 @@ Encode a post request like this:
 
 `1403755197367https://api.buttercoin.com/v1/orders{"instrument":"BTC_USD","side":"buy","orderType":"limit","quantity":1,"price":600.01}`
 
-Still not sure?  Find code examples [here](https://github.com/buttercoin/buttercoinsdk-node/blob/master/index.js#L32), [here](https://github.com/buttercoin/buttercoinsdk-php/blob/master/src/Client/ButtercoinClient.php#L144), [here](https://github.com/buttercoin/buttercoinsdk-python/blob/master/buttercoin/api.py#L101), and [here](https://github.com/buttercoin/buttercoinsdk-ruby/blob/master/lib/buttercoin/client.rb#L91).
+Still not sure?  Find code examples in [Node.js](https://github.com/buttercoin/buttercoinsdk-node/blob/master/index.js#L32), [PHP](https://github.com/buttercoin/buttercoinsdk-php/blob/master/src/Client/ButtercoinClient.php#L144), [Python](https://github.com/buttercoin/buttercoinsdk-python/blob/master/buttercoin/api.py#L101), and [Ruby](https://github.com/buttercoin/buttercoinsdk-ruby/blob/master/lib/buttercoin/client.rb#L91).
 
 
