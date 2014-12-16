@@ -781,6 +781,10 @@ An API Key is not required to access this endpoint.
 <td>enum: <code class="prettyprint">[&#39;market&#39;, &#39;limit&#39;]</code></td>
 </tr>
 <tr>
+<td><code class="prettyprint">id</code></td>
+<td>e.g. <code class="prettyprint">&#39;886313e1-3b8a-5372-9b90-0c9aee199e5d&#39;</code></td>
+</tr>
+<tr>
 <td><code class="prettyprint">dateMin</code></td>
 <td>format: ISO-8601, e.g. <code class="prettyprint">&#39;2014-05-06T13:15:30Z&#39;</code></td>
 </tr>
@@ -792,6 +796,9 @@ An API Key is not required to access this endpoint.
 <h3 id='querying-multiple-order-statuses'>Querying Multiple Order Statuses</h3>
 <p>To search for multiple order statuses, use comma separated values:
 <code class="prettyprint">&#39;opened,partial-filled&#39;</code></p>
+<h3 id='querying-multiple-order-ids'>Querying Multiple Order IDs</h3>
+<p>To search for multiple orders by ID, use comma separated values:
+<code class="prettyprint">&#39;886313e1-3b8a-5372-9b90-0c9aee199e5d,3f002e80-62c6-4274-a2d7-3f191923be09&#39;</code></p>
 <h3 id='calculate-price'>Calculate Price</h3>
 <p>To calculate the price you paid for each order, you can check <code class="prettyprint">filled</code> events in the response. The <code class="prettyprint">offered</code> field corresponds to the total amount paid in <code class="prettyprint">priceCurrency</code>, while <code class="prettyprint">received</code> corresponds to the total <code class="prettyprint">quantityCurrency</code> received.  Each <code class="prettyprint">filled</code> event is executed separately, and could have different prices depending on availability in the order book.</p>
 <h2 id='get-a-single-order'>Get a single order</h2>

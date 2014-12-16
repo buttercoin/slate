@@ -140,6 +140,7 @@ Parameter | Description
 `status` | enum: `['opened', 'partial-filled', 'filled', 'canceled']`  
 `side` | enum: `['buy', 'sell']`  
 `orderType` | enum: `['market', 'limit']`  
+`id` | e.g. `'886313e1-3b8a-5372-9b90-0c9aee199e5d'`
 `dateMin` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`  
 `dateMax` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`
 
@@ -147,6 +148,11 @@ Parameter | Description
 
 To search for multiple order statuses, use comma separated values:
 `'opened,partial-filled'`
+
+### Querying Multiple Order IDs
+
+To search for multiple orders by ID, use comma separated values:
+`'886313e1-3b8a-5372-9b90-0c9aee199e5d,3f002e80-62c6-4274-a2d7-3f191923be09'`
 
 ### Calculate Price
 
