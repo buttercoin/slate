@@ -123,10 +123,18 @@ This endpoint retrieves all transactions based on the given query.
 
 Parameter | Description
 --- | ---
+`page` | Integer
+`pageSize` | Integer
 `status` | enum: `['pending', 'processing', 'funded', 'canceled', 'failed']`  
 `transactionType` | enum: `['deposit', 'withdrawal']`  
 `dateMin` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`  
 `dateMax` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`
+
+### Paging
+
+Use `page` and `pageSize` parameters to retrieve additional transaction results. The default `page` parameter value is 1 if not provided. The default `pageSize` parameter value is 20 if not provided.
+
+The response will include an `X-Next-Page-Url` header with the URL to request the next page of transaction results.
 
 ## Get a single transaction
 
