@@ -137,12 +137,20 @@ This endpoint retrieves all orders based on the given query.
 
 Parameter | Description
 --- | ---
+`page` | Integer
+`pageSize` | Integer
 `status` | enum: `['opened', 'partial-filled', 'filled', 'canceled']`  
 `side` | enum: `['buy', 'sell']`  
 `orderType` | enum: `['market', 'limit']`  
 `id` | e.g. `'886313e1-3b8a-5372-9b90-0c9aee199e5d'`
 `dateMin` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`  
 `dateMax` | format: ISO-8601, e.g. `'2014-05-06T13:15:30Z'`
+
+### Paging
+
+Use `page` and `pageSize` parameters to retrieve additional order results. The default `page` parameter value is 1 if not provided. The default `pageSize` parameter value is 20 if not provided.
+
+The response will include an `X-Next-Page-Url` header with the URL to request the next page of order results.
 
 ### Querying Multiple Order Statuses
 
