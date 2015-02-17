@@ -18,6 +18,6 @@ Header | Description
 `X-Rate-Limit-Remaining` | The number of requests that you can send before you will exceed your rate limit 
 `X-Rate-Limit-Reset` | When your next rate limit window will be reset (in UTC [epoch milliseconds](http://en.wikipedia.org/wiki/Unix_time))
 
-### Bursing
+### Bursting
 
 We allow temporary bursting up to 600 requests per minute. After you submit your first request, you'll find that your `X-Rate-Limit-Remaining` will gradually increate (at 120/minute minus your usage) until it reaches a total of 600. If you do not submit any requests within one hour, it will reset again to 120 requests per minute.
