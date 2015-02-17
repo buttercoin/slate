@@ -20,4 +20,4 @@ Header | Description
 
 ### Bursting
 
-We allow temporary bursting up to 600 requests per minute. After you submit your first request, you'll find that your `X-Rate-Limit-Remaining` will gradually increate (at 120/minute minus your usage) until it reaches a total of 600. If you do not submit any requests within one hour, it will reset again to 120 requests per minute.
+We allow temporary bursting up to 600 requests per minute. After you submit your first request, you'll find that your `X-Rate-Limit-Remaining` will gradually increase (at 120/minute minus your usage) until it reaches a total of 600. If you do not submit any requests within one hour, it will reset again to 120 requests per minute.
