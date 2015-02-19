@@ -23,7 +23,7 @@ client = ButtercoinClient(
 ```
 
 ```javascript
-var buttercoin = require('buttercoinsdk-node')
+var buttercoin = require('buttercoin-node')
 var client = buttercoin(
     '<api_key>',
     '<api_secret>',
@@ -79,6 +79,4 @@ Encode a post request like this:
 
 `1403755197367https://api.buttercoin.com/v1/orders{"instrument":"BTC_USD","side":"buy","orderType":"limit","quantity":1,"price":600.01}`
 
-Still not sure?  Find code examples in [Node.js](https://github.com/buttercoin/buttercoinsdk-node/blob/master/index.js#L32), [PHP](https://github.com/buttercoin/buttercoinsdk-php/blob/master/src/Client/ButtercoinClient.php#L144), [Python](https://github.com/buttercoin/buttercoinsdk-python/blob/master/buttercoin/api.py#L101), and [Ruby](https://github.com/buttercoin/buttercoinsdk-ruby/blob/master/lib/buttercoin/client.rb#L91).
-
-
+Still not sure?  Find code examples in [Node.js](https://github.com/buttercoin/buttercoin-node/blob/master/index.js#L32), [PHP](https://github.com/buttercoin/buttercoin-php/blob/master/src/Client/ButtercoinClient.php#L144), [Python](https://github.com/buttercoin/buttercoin-python/blob/master/buttercoin/api.py#L101), and [Ruby](https://github.com/buttercoin/buttercoin-ruby/blob/master/lib/buttercoin/client.rb#L91).

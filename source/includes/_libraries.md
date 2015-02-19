@@ -20,10 +20,10 @@ npm install buttercoin-node
 
 ```php
 // Using Composer
-php composer.phar require buttercoin/buttercoin-sdk:~0.0.3
+php composer.phar require buttercoin/buttercoin-php:~0.0.3
 ```
 
-We've built the following officially supported API Client SDK's
+We've built the following officially supported API Clients:
 
 * [Java/Scala](https://github.com/buttercoin/buttercoin-java) - Returns data as Java objects
 * [Node.js](https://github.com/buttercoin/buttercoin-node) - Returns data in JSON format
@@ -31,10 +31,8 @@ We've built the following officially supported API Client SDK's
 * [Ruby](https://github.com/buttercoin/buttercoin-ruby) - Returns data as [Hashie::Mash](https://github.com/intridea/hashie) objects
 * [Python](https://github.com/buttercoin/buttercoin-python) - Returns data in JSON format
 
-Have another suggested language for a client?  Just [let us know](mailto:api@buttercoin.com?subject=Add%20An%20API%20Language).
+Have another suggested language for a client?  Just [let us know](mailto:api@buttercoin.com).
 
 <aside class="notice">
   These libraries are open source projects and we love involvement from the community! Hit us up with pull requests and issues.
 </aside>
-
-

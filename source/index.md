@@ -1,5 +1,5 @@
 ---
-title: Buttercoin API documentation
+title: Buttercoin API Documentation
 
 language_tabs:
   - ruby
@@ -8,8 +8,8 @@ language_tabs:
   - php
 
 toc_footers:
-  - <a href='https://www.buttercoin.com/#/api'>Manage your API Developer Keys</a>
-  - Need help? <a href='mailto:api@buttercoin.com?subject=API%20Question'>Email Us</a>
+  - <a href='https://www.buttercoin.com/#/api'>Manage your API Keys</a>
+  - Need help? <a href='mailto:api@buttercoin.com'>Get in touch</a>.
 
 includes:
   - introduction
