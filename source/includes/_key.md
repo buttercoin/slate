@@ -4,8 +4,6 @@ Get information about the API key you are using
 
 ## Get permissions
 
-> Success Response Code: 200
-
 ```python
 client.get_key()
 ```
@@ -26,8 +24,6 @@ client->getKey();
 ```ruby
 client.get_key()
 ```
-
-> The above command returns an Object structured like this:
 
 ```ruby
 # Hashie::Mash Object

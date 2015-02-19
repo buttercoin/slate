@@ -19,7 +19,7 @@
 
       <script>
         $(function() {
-          setupLanguages(["ruby","python","javascript","php"]);
+          setupLanguages(["shell","java","ruby","python","javascript","php"]);
         });
       </script>
   </head>
@@ -32,9 +32,11 @@
       </span>
     </a>
     <div class="tocify-wrapper">
-      <img class="logo" src="images/bc-logo.png" />
-      <h1 class="title toc-ignore">Buttercoin</h1>
+      <a style="text-align:center; display:block;" href="https://developer.buttercoin.com"><img class="logo" src="images/bc-logo.png" /></a>
+      <h3 class="title toc-ignore">Buttercoin API</h3>
         <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="java">java</a>
               <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
@@ -47,6 +49,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
+            <li>(C) 2015 Buttercoin Inc.</li>
             <li><a href='https://www.buttercoin.com/#/api'>Manage your API Keys</a></li>
             <li>Need help? <a href='mailto:api@buttercoin.com'>Get in touch</a>.</li>
         </ul>
@@ -55,31 +58,42 @@
       <div class="dark-box"></div>
       <div class="content">
         
-          <h1 id='introduction'>Introduction</h1>
-<blockquote>
-<p>Production Endpoint</p>
-</blockquote>
-<pre class="highlight plaintext">https://api.buttercoin.com
+          <h1 id='introduction'>Introduction</h1><pre class="highlight shell"><span class="gp">$ </span>curl -i https://api.buttercoin.com/v1/ticker
+HTTP/1.1 200 OK
+Content-Type: application/json; <span class="nv">charset</span><span class="o">=</span>UTF-8
+X-Rate-Limit-Limit: 120
+X-Rate-Limit-Remaining: 119
+X-Rate-Limit-Reset: 1424380431341
+
+<span class="o">{</span>
+  <span class="s2">"currency"</span>: <span class="s2">"USD"</span>,
+  <span class="s2">"last"</span>: 239.69,
+  <span class="s2">"bid"</span>: 239.85,
+  <span class="s2">"ask"</span>: 240.09
+<span class="o">}</span>
 </pre>
 
-<blockquote>
-<p>Sandbox Endpoint</p>
-</blockquote>
-<pre class="highlight plaintext">https://sandbox.buttercoin.com
+<p>Buttercoin provides developers with a simple and powerful REST API to integrate your applications with our Marketplace, enabling you to deposit and withdraw funds
+from your account and execute trades without going through the web interface.</p>
+
+<p>All API access is over HTTPS, and accessed at the <a href="https://api.buttercoin.com"><code class="prettyprint">https://api.buttercoin.com</code></a> domain. All data is sent and received as
+JSON - <code class="prettyprint">application/json</code>.</p>
+<h3 id='sandbox-environment'>Sandbox Environment</h3>
+<p>To help you test your more complicated workflows, we’ve created a sandbox environment that uses testnet bitcoins and fake funds.
+Each Buttercoin API Client allows you to include a sandbox environment parameter during initialization. Please see the API Client
+documentation for details.</p>
+
+<p>The web interface for the sandbox is available at <a href="https://www-sandbox.buttercoin.com/">https://www-sandbox.buttercoin.com/</a>.
+The API endpoint for the sandbox is <a href="https://sandbox.buttercoin.com"><code class="prettyprint">https://sandbox.buttercoin.com</code></a></p>
+
+          <h1 id='api-clients'>API Clients</h1><pre class="highlight java"><span class="c1">// Add this dependency to your project's POM file:</span>
+
+<span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="na">buttercoin</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">buttercoin</span><span class="o">-</span><span class="n">java</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
 </pre>
-
-<p>Welcome to the Buttercoin API documentation. The Buttercoin API allows you to connect your application to our Marketplace to deposit and withdraw funds from your account and execute trades without going through the web interface.</p>
-
-<p>To learn more about the Sandbox API environment which uses testnet bitcoins, <a href="#sandbox">click here</a></p>
-
-<p><aside class="warning">
-Buttercoin will never ask you for your API key or secret. Please <a href="mailto:security@buttercoin.com">report</a> to us any emails you receive that request this information.
-</aside></p>
-
-          <h1 id='libraries'>Libraries</h1>
-<blockquote>
-<p>To install the Buttercoin API Client:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># Add to your Gemfile</span>
 <span class="n">gem</span> <span class="s1">'buttercoin'</span><span class="p">,</span> <span class="s1">'~&gt; 0.0.3'</span>
 
@@ -104,31 +118,34 @@ php composer.phar require buttercoin/buttercoin-php:~0.0.3
 <li><a href="https://github.com/buttercoin/buttercoin-python">Python</a> - Returns data in JSON format</li>
 </ul>
 
-<p>Have another suggested language for a client?  Just <a href="mailto:api@buttercoin.com">let us know</a>.</p>
-
 <p><aside class="notice">
   These libraries are open source projects and we love involvement from the community! Hit us up with pull requests and issues.
 </aside></p>
 
           <h1 id='authentication'>Authentication</h1>
 <blockquote>
-<p>To initialize the client, use this code:</p>
+<p>All clients support the environment variables <code class="prettyprint">BUTTERCOIN_API_KEY</code> and <code class="prettyprint">BUTTERCOIN_API_SECRET</code>.</p>
 </blockquote>
+<pre class="highlight java"><span class="kn">import</span> <span class="nn">com.buttercoin.api.*</span><span class="o">;</span>
+
+<span class="n">Buttercoin</span> <span class="n">buttercoin</span> <span class="o">=</span> <span class="n">Buttercoin</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">apiKey</span><span class="o">(</span><span class="s">"pzovcp0kkxmchkuj3smej2wmtjwlare6"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">apiSecret</span><span class="o">(</span><span class="s">"KQvYkSZyt0EpJMeKLvMd1sPb1SdrxBqD"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</pre>
 <pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'buttercoin'</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="no">Buttercoin</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
     <span class="ss">:public_key</span> <span class="o">=&gt;</span> <span class="s1">'&lt;public_key&gt;'</span><span class="p">,</span>
-    <span class="ss">:secret_key</span> <span class="o">=&gt;</span> <span class="s1">'&lt;secret_key&gt;'</span><span class="p">,</span>
-    <span class="ss">:mode</span> <span class="o">=&gt;</span> <span class="s1">'&lt;mode&gt;'</span>
-    <span class="p">)</span>               
+    <span class="ss">:secret_key</span> <span class="o">=&gt;</span> <span class="s1">'&lt;secret_key&gt;'</span>
+<span class="p">)</span>
 </pre>
 <pre class="highlight python"><span class="kn">from</span> <span class="nn">buttercoin.client</span> <span class="kn">import</span> <span class="n">ButtercoinClient</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">ButtercoinClient</span><span class="p">(</span>
     <span class="n">api_key</span><span class="o">=</span><span class="s">'&lt;api_key&gt;'</span><span class="p">,</span>
-    <span class="n">api_secret</span><span class="o">=</span><span class="s">'&lt;api_secret&gt;'</span><span class="p">,</span>
-    <span class="n">mode</span><span class="o">=</span><span class="s">'&lt;mode&gt;'</span>
-    <span class="p">)</span>
+    <span class="n">api_secret</span><span class="o">=</span><span class="s">'&lt;api_secret&gt;'</span>
+<span class="p">)</span>
 </pre>
 <pre class="highlight javascript"><span class="kd">var</span> <span class="nx">buttercoin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'buttercoin-node'</span><span class="p">)</span>
 <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">buttercoin</span><span class="p">(</span>
@@ -136,7 +153,7 @@ php composer.phar require buttercoin/buttercoin-php:~0.0.3
     <span class="s1">'&lt;api_secret&gt;'</span><span class="p">,</span>
     <span class="s1">'&lt;environment&gt;'</span><span class="p">,</span>
     <span class="s1">'&lt;version&gt;'</span>
-    <span class="p">);</span>
+<span class="p">);</span>
 </pre>
 <pre class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
@@ -151,25 +168,20 @@ php composer.phar require buttercoin/buttercoin-php:~0.0.3
 </pre>
 
 <blockquote>
-<p>If you are not using a client, Authenticated Requests should include these headers:</p>
-</blockquote>
-<pre class="highlight http"><span class="nf">POST</span> <span class="nn">/endpoint</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">X-Buttercoin-Access-Key</span><span class="p">:</span> <span class="s">&lt;YOUR_API_KEY&gt;</span>
-<span class="na">X-Buttercoin-Signature</span><span class="p">:</span> <span class="s">&lt;HMAC_SIGNATURE&gt; </span>
-<span class="na">X-Buttercoin-Date</span><span class="p">:</span> <span class="s">&lt;CURRENT_TIMESTAMP&gt;</span>
-</pre>
-
-<blockquote>
-<p>The client will automatically sign your requests with the proper headers.</p>
+<p>The client will automatically sign your requests with the proper headers. If you are not using a client,
+  authenticated requests should include the X-Buttercoin-Access-Key, X-Buttercoin-Signature and X-Buttercoin-Date headers.</p>
 </blockquote>
 
-<p>The Buttercoin API provides one publicly accessible endpoint to get the current ticker price and another to view the current order book. All other API calls require a valid API Access Key and secure authentication.</p>
+<p>The Buttercoin API provides publicly accessible endpoints to get the current ticker price, the current order book, and the trade history.
+All other API calls require a valid API Key and API Secret.</p>
 
 <p><aside class="warning">
-You must always keep your API Keys secure to make sure no one can access your account.  If you think a key might be compromised, simply revoke your API key <a href="https://www.buttercoin.com/#/api">here</a>.
-</aside></p>
+Buttercoin will <em>never</em> ask you for your API Key or Secret. Please <a href="mailto:security@buttercoin.com">report</a> to us any emails you receive that
+request this information.</p>
 
-<p><em>If you are building your own client for the API&hellip;</em></p>
+<p>You must always keep your API Keys secure to make sure no one can access your account.  If you think a key might be compromised, simply revoke
+your API key <a href="https://www.buttercoin.com/#/api">here</a>.
+</aside></p>
 <h3 id='building-an-hmac-signature-with-sha-256'>Building an HMAC Signature with SHA-256</h3>
 <ol>
 <li>Concatenate the timestamp, request URL and parameters into a UTF-8 String:</li>
@@ -178,22 +190,88 @@ You must always keep your API Keys secure to make sure no one can access your ac
 <li>Convert to Base64 once again</li>
 </ol>
 
-<p>Encode a get request like this: </p>
+<p>Encode a get request like this:</p>
 
 <p><code class="prettyprint">1403755197367https://api.buttercoin.com/v1/orders?status=filled&amp;orderType=limit</code></p>
 
-<p>Encode a post request like this: </p>
+<p>Encode a post request like this:</p>
 
 <p><code class="prettyprint">1403755197367https://api.buttercoin.com/v1/orders{&quot;instrument&quot;:&quot;BTC_USD&quot;,&quot;side&quot;:&quot;buy&quot;,&quot;orderType&quot;:&quot;limit&quot;,&quot;quantity&quot;:1,&quot;price&quot;:600.01}</code></p>
+<h3 id='http-headers'>HTTP Headers</h3>
+<p><code class="prettyprint">X-Buttercoin-Access-Key: &lt;your API Key&gt;</code></p>
+
+<p><code class="prettyprint">X-Buttercoin-Signature: &lt;the HMAC signature&gt;</code></p>
+
+<p><code class="prettyprint">X-Buttercoin-Date: &lt;the current date epoch</code></p>
 
 <p>Still not sure?  Find code examples in <a href="https://github.com/buttercoin/buttercoin-node/blob/master/index.js#L32">Node.js</a>, <a href="https://github.com/buttercoin/buttercoin-php/blob/master/src/Client/ButtercoinClient.php#L144">PHP</a>, <a href="https://github.com/buttercoin/buttercoin-python/blob/master/buttercoin/api.py#L101">Python</a>, and <a href="https://github.com/buttercoin/buttercoin-ruby/blob/master/lib/buttercoin/client.rb#L91">Ruby</a>.</p>
 
           <h1 id='public'>Public</h1>
-<p>These endpoints do not require an API key for access.</p>
-<h2 id='get-the-orderbook'>Get the orderbook</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
+<p>These endpoints do not require authentication.</p>
+<h2 id='get-the-ticker'>Get the ticker</h2><pre class="highlight shell">curl -i https://api.buttercoin.com/v1/ticker
+</pre>
+<pre class="highlight java"><span class="kn">import</span> <span class="nn">com.buttercoin.api.*</span><span class="o">;</span>
+
+<span class="n">Buttercoin</span> <span class="n">buttercoin</span> <span class="o">=</span> <span class="n">Buttercoin</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="n">Ticker</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">buttercoin</span><span class="o">.</span><span class="na">getTicker</span><span class="o">();</span>
+<span class="n">BigDecimal</span> <span class="n">last</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">getLast</span><span class="o">();</span>
+</pre>
+<pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_ticker</span><span class="p">()</span>
+</pre>
+<pre class="highlight javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">getTicker</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">ticker</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"ticker err"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"ticker"</span><span class="p">,</span> <span class="nx">ticker</span><span class="p">);</span>
+<span class="p">});</span>
+</pre>
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+<span class="nx">client</span><span class="o">-&gt;</span><span class="na">getTicker</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</pre>
+<pre class="highlight ruby"><span class="n">client</span><span class="p">.</span><span class="nf">get_ticker</span><span class="p">()</span>
+</pre>
+<pre class="highlight python"><span class="c"># Dict Object</span>
+<span class="p">{</span>
+  <span class="s">"currency"</span><span class="p">:</span> <span class="s">"USD"</span><span class="p">,</span>
+  <span class="s">"last"</span><span class="p">:</span> <span class="mf">404.12</span><span class="p">,</span>
+  <span class="s">"bid"</span><span class="p">:</span> <span class="mf">403.98</span><span class="p">,</span>
+  <span class="s">"ask"</span><span class="p">:</span> <span class="mf">404.22</span>
+<span class="p">}</span>
+</pre>
+<pre class="highlight javascript"><span class="c1">// JSON Object
+</span><span class="p">{</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+  <span class="s2">"last"</span><span class="p">:</span> <span class="mf">404.12</span><span class="p">,</span>
+  <span class="s2">"bid"</span><span class="p">:</span> <span class="mf">403.98</span><span class="p">,</span>
+  <span class="s2">"ask"</span><span class="p">:</span> <span class="mf">404.22</span>
+<span class="p">}</span>
+</pre>
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+<span class="c1">// Array Object
+</span><span class="p">[</span>
+  <span class="s2">"currency"</span> <span class="o">=&gt;</span> <span class="nx">USD</span><span class="p">,</span>
+  <span class="s2">"last"</span> <span class="o">=&gt;</span> <span class="mf">589.67</span><span class="p">,</span>
+  <span class="s2">"bid"</span> <span class="o">=&gt;</span> <span class="mf">584.95</span><span class="p">,</span>
+  <span class="s2">"ask"</span> <span class="o">=&gt;</span> <span class="mf">589.67</span>
+<span class="p">]</span>
+<span class="cp">?&gt;</span>
+</pre>
+<pre class="highlight ruby"><span class="c1"># Hashie::Mash Object</span>
+<span class="n">ticker</span><span class="p">.</span><span class="nf">ask</span> <span class="c1"># 589.67</span>
+<span class="n">ticker</span><span class="p">.</span><span class="nf">bid</span> <span class="c1"># 584.95</span>
+<span class="n">ticker</span><span class="p">.</span><span class="nf">last</span> <span class="c1"># 589.67</span>
+<span class="n">ticker</span><span class="p">.</span><span class="nf">currency</span> <span class="c1"># "USD"</span>
+</pre>
+
+<p>Get the last trade price, current ask, and current bid.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /v1/ticker</code></p>
+<h2 id='get-the-orderbook'>Get the orderbook</h2><pre class="highlight shell">curl -i https://api.buttercoin.com/v1/orderbook
+</pre>
+<pre class="highlight java"><span class="kn">import</span> <span class="nn">com.buttercoin.api.*</span><span class="o">;</span>
+
+<span class="n">Buttercoin</span> <span class="n">buttercoin</span> <span class="o">=</span> <span class="n">Buttercoin</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="n">OrderBook</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">buttercoin</span><span class="o">.</span><span class="na">getOrderBook</span><span class="o">();</span>
+</pre>
 <pre class="highlight ruby"><span class="n">client</span><span class="p">.</span><span class="nf">get_order_book</span><span class="p">()</span>
 </pre>
 <pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_order_book</span><span class="p">()</span>
@@ -207,10 +285,6 @@ You must always keep your API Keys secure to make sure no one can access your ac
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getOrderBook</span><span class="p">();</span>
 <span class="cp">?&gt;</span>
 </pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># Hashie::Mash Object examples</span>
 
 <span class="c1"># get the highest bid price</span>
@@ -305,14 +379,13 @@ You must always keep your API Keys secure to make sure no one can access your ac
 <p>Get all the orders in the book on both the bid and ask sides</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/orderbook</code></p>
+<h2 id='get-trade-history'>Get trade history</h2><pre class="highlight shell">curl -i https://api.buttercoin.com/v1/trades
+</pre>
+<pre class="highlight java"><span class="kn">import</span> <span class="nn">com.buttercoin.api.*</span><span class="o">;</span>
 
-<p><aside class="notice">
-An API Key is not required to access this endpoint.
-</aside></p>
-<h2 id='get-trade-history'>Get trade history</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
+<span class="n">Buttercoin</span> <span class="n">buttercoin</span> <span class="o">=</span> <span class="n">Buttercoin</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="n">TradeHistory</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">buttercoin</span><span class="o">.</span><span class="na">getTradeHistory</span><span class="o">();</span>
+</pre>
 <pre class="highlight ruby"><span class="n">client</span><span class="p">.</span><span class="nf">get_trade_history</span><span class="p">()</span>
 </pre>
 <pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_trade_history</span><span class="p">()</span>
@@ -326,10 +399,6 @@ An API Key is not required to access this endpoint.
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getTradeHistory</span><span class="p">();</span>
 <span class="cp">?&gt;</span>
 </pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># Hashie::Mash Object examples</span>
 
 <span class="c1"># get the most recent trade</span>
@@ -430,78 +499,9 @@ An API Key is not required to access this endpoint.
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/trades</code></p>
 
-<p><aside class="notice">
-An API Key is not required to access this endpoint.
-</aside></p>
-<h2 id='get-the-ticker'>Get the ticker</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
-<pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_ticker</span><span class="p">()</span>
-</pre>
-<pre class="highlight javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">getTicker</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">ticker</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"ticker err"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"ticker"</span><span class="p">,</span> <span class="nx">ticker</span><span class="p">);</span>
-<span class="p">});</span>
-</pre>
-<pre class="highlight php"><span class="cp">&lt;?php</span>
-<span class="nx">client</span><span class="o">-&gt;</span><span class="na">getTicker</span><span class="p">();</span>
-<span class="cp">?&gt;</span>
-</pre>
-<pre class="highlight ruby"><span class="n">client</span><span class="p">.</span><span class="nf">get_ticker</span><span class="p">()</span>
-</pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
-<pre class="highlight python"><span class="c"># Dict Object</span>
-<span class="p">{</span>
-  <span class="s">"currency"</span><span class="p">:</span> <span class="s">"USD"</span><span class="p">,</span>
-  <span class="s">"last"</span><span class="p">:</span> <span class="mf">404.12</span><span class="p">,</span>
-  <span class="s">"bid"</span><span class="p">:</span> <span class="mf">403.98</span><span class="p">,</span>
-  <span class="s">"ask"</span><span class="p">:</span> <span class="mf">404.22</span>
-<span class="p">}</span>
-</pre>
-<pre class="highlight javascript"><span class="c1">// JSON Object
-</span><span class="p">{</span>
-  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-  <span class="s2">"last"</span><span class="p">:</span> <span class="mf">404.12</span><span class="p">,</span>
-  <span class="s2">"bid"</span><span class="p">:</span> <span class="mf">403.98</span><span class="p">,</span>
-  <span class="s2">"ask"</span><span class="p">:</span> <span class="mf">404.22</span>
-<span class="p">}</span>
-</pre>
-<pre class="highlight php"><span class="cp">&lt;?php</span>
-<span class="c1">// Array Object
-</span><span class="p">[</span>
-  <span class="s2">"currency"</span> <span class="o">=&gt;</span> <span class="nx">USD</span><span class="p">,</span>
-  <span class="s2">"last"</span> <span class="o">=&gt;</span> <span class="mf">589.67</span><span class="p">,</span>
-  <span class="s2">"bid"</span> <span class="o">=&gt;</span> <span class="mf">584.95</span><span class="p">,</span>
-  <span class="s2">"ask"</span> <span class="o">=&gt;</span> <span class="mf">589.67</span>
-<span class="p">]</span>
-<span class="cp">?&gt;</span>
-</pre>
-<pre class="highlight ruby"><span class="c1"># Hashie::Mash Object</span>
-<span class="n">ticker</span><span class="p">.</span><span class="nf">ask</span> <span class="c1"># 589.67</span>
-<span class="n">ticker</span><span class="p">.</span><span class="nf">bid</span> <span class="c1"># 584.95</span>
-<span class="n">ticker</span><span class="p">.</span><span class="nf">last</span> <span class="c1"># 589.67</span>
-<span class="n">ticker</span><span class="p">.</span><span class="nf">currency</span> <span class="c1"># "USD"</span>
-</pre>
-
-<p>Get the last trade price, current ask, and current bid</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET /v1/ticker</code></p>
-
-<p><aside class="notice">
-An API Key is not required to access this endpoint.
-</aside></p>
-
           <h1 id='key'>Key</h1>
 <p>Get information about the API key you are using</p>
-<h2 id='get-permissions'>Get permissions</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
-<pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_key</span><span class="p">()</span>
+<h2 id='get-permissions'>Get permissions</h2><pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_key</span><span class="p">()</span>
 </pre>
 <pre class="highlight javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">getKey</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">ticker</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"key err"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
@@ -514,10 +514,6 @@ An API Key is not required to access this endpoint.
 </pre>
 <pre class="highlight ruby"><span class="n">client</span><span class="p">.</span><span class="nf">get_key</span><span class="p">()</span>
 </pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># Hashie::Mash Object</span>
 <span class="n">key</span><span class="p">.</span><span class="nf">permissions</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">permission</span><span class="o">|</span>
 <span class="n">permission</span>
@@ -556,11 +552,7 @@ An API Key is not required to access this endpoint.
 
           <h1 id='account'>Account</h1>
 <p>Retrieve data specific to your Buttercoin account</p>
-<h2 id='get-account-balances'>Get account balances</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
-<pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_balances</span><span class="p">()</span>
+<h2 id='get-account-balances'>Get account balances</h2><pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_balances</span><span class="p">()</span>
 </pre>
 <pre class="highlight javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">getBalances</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">ticker</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"balances err"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
@@ -573,10 +565,6 @@ An API Key is not required to access this endpoint.
 </pre>
 <pre class="highlight ruby"><span class="n">client</span><span class="p">.</span><span class="nf">get_balances</span><span class="p">()</span>
 </pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># Hashie::Mash Object</span>
 <span class="n">balances</span><span class="o">.</span><span class="no">BTC</span> <span class="c1"># 5.44423312</span>
 <span class="n">balances</span><span class="o">.</span><span class="no">USD</span> <span class="c1"># 1413.56</span>
@@ -605,11 +593,7 @@ An API Key is not required to access this endpoint.
 <p>This endpoint retrieves the account balances in all currencies held.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET /v1/account/balances</code></p>
-<h2 id='get-deposit-address'>Get deposit address</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
-<pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_deposit_address</span><span class="p">()</span>
+<h2 id='get-deposit-address'>Get deposit address</h2><pre class="highlight python"><span class="n">client</span><span class="o">.</span><span class="n">get_deposit_address</span><span class="p">()</span>
 </pre>
 <pre class="highlight javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">getDepositAddress</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"address err"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
@@ -622,10 +606,6 @@ An API Key is not required to access this endpoint.
 </pre>
 <pre class="highlight ruby"><span class="n">client</span><span class="p">.</span><span class="nf">get_deposit_address</span><span class="p">()</span>
 </pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># returns a string</span>
 <span class="s2">"1J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy"</span>
 </pre>
@@ -647,11 +627,7 @@ An API Key is not required to access this endpoint.
 
           <h1 id='orders'>Orders</h1>
 <p>Orders are offers to either buy or sell bitcoins.  We support market and limit orders.</p>
-<h2 id='get-all-orders'>Get all orders</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
-<pre class="highlight ruby"><span class="n">query</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"status"</span> <span class="o">=&gt;</span> <span class="s2">"opened"</span> <span class="p">}</span>
+<h2 id='get-all-orders'>Get all orders</h2><pre class="highlight ruby"><span class="n">query</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"status"</span> <span class="o">=&gt;</span> <span class="s2">"opened"</span> <span class="p">}</span>
 <span class="n">client</span><span class="p">.</span><span class="nf">get_orders</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre>
 <pre class="highlight python"><span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s">'status'</span><span class="p">:</span> <span class="s">'filled'</span><span class="p">}</span>
@@ -668,10 +644,6 @@ An API Key is not required to access this endpoint.
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getOrders</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># Hashie::Mash Object</span>
 <span class="n">orders</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">order</span><span class="o">|</span>
 <span class="n">order</span><span class="p">.</span><span class="nf">orderId</span>
@@ -814,11 +786,7 @@ An API Key is not required to access this endpoint.
 <code class="prettyprint">&#39;886313e1-3b8a-5372-9b90-0c9aee199e5d,3f002e80-62c6-4274-a2d7-3f191923be09&#39;</code></p>
 <h3 id='calculate-price'>Calculate Price</h3>
 <p>To calculate the price you paid for each order, you can check <code class="prettyprint">filled</code> events in the response. The <code class="prettyprint">offered</code> field corresponds to the total amount paid in <code class="prettyprint">priceCurrency</code>, while <code class="prettyprint">received</code> corresponds to the total <code class="prettyprint">quantityCurrency</code> received.  Each <code class="prettyprint">filled</code> event is executed separately, and could have different prices depending on availability in the order book.</p>
-<h2 id='get-a-single-order'>Get a single order</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
-<pre class="highlight ruby"><span class="c1"># Get order with the ID</span>
+<h2 id='get-a-single-order'>Get a single order</h2><pre class="highlight ruby"><span class="c1"># Get order with the ID</span>
 <span class="n">order_id</span> <span class="o">=</span> <span class="s1">'e3afed81-4a9c-4480-a78a-e0872408b95a'</span>
 <span class="n">client</span><span class="p">.</span><span class="nf">get_order_by_id</span><span class="p">(</span><span class="n">order_id</span><span class="p">)</span>
 
@@ -858,10 +826,6 @@ An API Key is not required to access this endpoint.
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getOrderByUrl</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># Hashie::Mash Object</span>
 <span class="n">order</span><span class="p">.</span><span class="nf">orderId</span> <span class="c1"># "886313e1-3b8a-5372-9b90-0c9aee199e5d"</span>
 <span class="n">order</span><span class="p">.</span><span class="nf">status</span> <span class="c1"># "open"</span>
@@ -1022,7 +986,7 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <blockquote>
-<p>A successful order creation returns the url location of the new order in the response location header with HTTP Response Code of 202:</p>
+<p>A successful order creation returns the url location of the new order in the response location header with HTTP Response Code of 202.</p>
 </blockquote>
 <pre class="highlight ruby"><span class="c1"># string</span>
 <span class="s1">'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be09'</span>
@@ -1129,11 +1093,7 @@ An API Key is not required to access this endpoint.
 
           <h1 id='transactions'>Transactions</h1>
 <p>Transactions are deposits and withdrawals of fiat currency and bitcoin.</p>
-<h2 id='get-all-transactions'>Get all transactions</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
-<pre class="highlight ruby"><span class="n">query</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"status"</span> <span class="o">=&gt;</span> <span class="s2">"opened"</span> <span class="p">}</span>
+<h2 id='get-all-transactions'>Get all transactions</h2><pre class="highlight ruby"><span class="n">query</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"status"</span> <span class="o">=&gt;</span> <span class="s2">"opened"</span> <span class="p">}</span>
 <span class="n">client</span><span class="p">.</span><span class="nf">get_transactions</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre>
 <pre class="highlight python"><span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s">'status'</span><span class="p">:</span> <span class="s">'filled'</span><span class="p">}</span>
@@ -1150,10 +1110,6 @@ An API Key is not required to access this endpoint.
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getTransactions</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># Hashie::Mash Object</span>
 <span class="n">transactions</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">transaction</span><span class="o">|</span>
 <span class="n">transaction</span><span class="p">.</span><span class="nf">transactionId</span> <span class="c1"># "538bdc82848a604c007ceac6"</span>
@@ -1266,11 +1222,7 @@ An API Key is not required to access this endpoint.
 <p>Use <code class="prettyprint">page</code> and <code class="prettyprint">pageSize</code> parameters to retrieve additional transaction results. The default <code class="prettyprint">page</code> parameter value is 1 if not provided. The default <code class="prettyprint">pageSize</code> parameter value is 20 if not provided.</p>
 
 <p>The response will include an <code class="prettyprint">X-Next-Page-Url</code> header with the URL to request the next page of transaction results.</p>
-<h2 id='get-a-single-transaction'>Get a single transaction</h2>
-<blockquote>
-<p>Success Response Code: 200</p>
-</blockquote>
-<pre class="highlight ruby"><span class="c1"># Get transaction with the ID</span>
+<h2 id='get-a-single-transaction'>Get a single transaction</h2><pre class="highlight ruby"><span class="c1"># Get transaction with the ID</span>
 <span class="n">transaction_id</span> <span class="o">=</span> <span class="s1">'538bdc82848a604c007ceac6'</span>
 <span class="n">client</span><span class="p">.</span><span class="nf">get_transaction_by_id</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">)</span>
 
@@ -1310,10 +1262,6 @@ An API Key is not required to access this endpoint.
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getTransactionByUrl</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </pre>
-
-<blockquote>
-<p>The above command returns an Object structured like this:</p>
-</blockquote>
 <pre class="highlight ruby"><span class="c1"># Hashie::Mash Object</span>
 <span class="n">transaction</span><span class="p">.</span><span class="nf">transactionId</span> <span class="c1"># "538bdc82848a604c007ceac6"</span>
 <span class="n">transaction</span><span class="p">.</span><span class="nf">status</span> <span class="c1"># "open"</span>
@@ -1436,7 +1384,7 @@ An API Key is not required to access this endpoint.
 </pre>
 
 <blockquote>
-<p>A successful deposit transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202:</p>
+<p>A successful deposit transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202.</p>
 </blockquote>
 <pre class="highlight ruby"><span class="c1"># string</span>
 <span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
@@ -1531,7 +1479,7 @@ Please contact Buttercoin support before creating a USD deposit using the API.
 </pre>
 
 <blockquote>
-<p>A successful withdrawal transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202</p>
+<p>A successful withdrawal transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202.</p>
 </blockquote>
 <pre class="highlight ruby"><span class="c1"># string</span>
 <span class="s1">'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
@@ -1627,7 +1575,7 @@ For your security, the default setting for withdrawals requires email confirmati
 </pre>
 
 <blockquote>
-<p>A successful withdrawal transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202:</p>
+<p>A successful withdrawal transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202.</p>
 </blockquote>
 <pre class="highlight ruby"><span class="c1"># string</span>
 <span class="s1">'http://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6'</span>
@@ -1671,11 +1619,7 @@ For your security, the default setting for withdrawals requires email confirmati
 <p><aside class="info">
 For your security, the default setting for withdrawals requires email confirmation. You can view or change this setting <a href="https://buttercoin.com/#/settings#tab-notifications">here</a>.
 </aside></p>
-<h2 id='cancel-a-transaction'>Cancel a transaction</h2>
-<blockquote>
-<p>Success Response Code: 204</p>
-</blockquote>
-<pre class="highlight ruby">  <span class="n">transaction_id</span> <span class="o">=</span> <span class="s1">'e3afed81-4a9c-4480-a78a-e0872408b95a'</span>
+<h2 id='cancel-a-transaction'>Cancel a transaction</h2><pre class="highlight ruby">  <span class="n">transaction_id</span> <span class="o">=</span> <span class="s1">'e3afed81-4a9c-4480-a78a-e0872408b95a'</span>
 <span class="n">client</span><span class="p">.</span><span class="nf">cancel_transaction</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">)</span>
 </pre>
 <pre class="highlight python"><span class="n">transaction_id</span> <span class="o">=</span> <span class="s">'e3afed81-4a9c-4480-a78a-e0872408b95a'</span>
@@ -1843,22 +1787,11 @@ For your security, the default setting for withdrawals requires email confirmati
 </tr>
 </tbody></table>
 
-          <h1 id='sandbox'>Sandbox</h1>
-<blockquote>
-<p>If you test any scenarios that involve withdrawing bitcoins from your Buttercoin account, please send them back to the following address when you&rsquo;re done:</p>
-</blockquote>
-<pre class="highlight plaintext">mzy7jia5a1xNkVKSYnTSbySks2tpPSQCiK
-</pre>
-
-<p>To help you test your more complicated workflows, we&rsquo;ve created a sandbox environment that uses testnet bitcoins and fake funds.</p>
-
-<p>Each Buttercoin API Client allows you to include a sandbox environment parameter during initialization. Please see API Client documentation for details.</p>
-
-<p>To use the sandbox, you will need to create a sandbox account.  If you&rsquo;d like one, <a href="mailto:api@buttercoin.com?subject=Add%20A%20Sandbox%20Account">let us know</a>.  We&rsquo;ll send you an invitation email with instructions.</p>
-
       </div>
       <div class="dark-box">
           <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="java">java</a>
                 <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>

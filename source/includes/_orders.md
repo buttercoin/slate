@@ -4,8 +4,6 @@ Orders are offers to either buy or sell bitcoins.  We support market and limit o
 
 ## Get all orders 
 
-> Success Response Code: 200
-
 ```ruby
 query = { "status" => "opened" }
 client.get_orders(query)
@@ -30,8 +28,6 @@ $query = [ "status" => "canceled", "side" => "sell" ];
 $client->getOrders($query);
 ?>
 ```
-
-> The above command returns an Object structured like this:
 
 ```ruby
 # Hashie::Mash Object
@@ -168,8 +164,6 @@ To calculate the price you paid for each order, you can check `filled` events in
 
 ## Get a single order
 
-> Success Response Code: 200
-
 ```ruby
 # Get order with the ID
 order_id = 'e3afed81-4a9c-4480-a78a-e0872408b95a'
@@ -217,9 +211,6 @@ $url = 'https://api.buttercoin.com/v1/orders/3f002e80-62c6-4274-a2d7-3f191923be0
 $client->getOrderByUrl($url);
 ?>
 ```
-
-> The above command returns an Object structured like this:
-
 
 ```ruby
 # Hashie::Mash Object
@@ -393,7 +384,7 @@ $client->createOrder($order);
 ?>
 ```
 
-> A successful order creation returns the url location of the new order in the response location header with HTTP Response Code of 202:
+> A successful order creation returns the url location of the new order in the response location header with HTTP Response Code of 202.
 
 ```ruby
 # string

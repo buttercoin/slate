@@ -4,8 +4,6 @@ Transactions are deposits and withdrawals of fiat currency and bitcoin.
 
 ## Get all transactions 
 
-> Success Response Code: 200
-
 ```ruby
 query = { "status" => "opened" }
 client.get_transactions(query)
@@ -30,8 +28,6 @@ $query = [ "status" => "canceled", "side" => "sell" ];
 $client->getTransactions($query);
 ?>
 ```
-
-> The above command returns an Object structured like this:
 
 ```ruby
 # Hashie::Mash Object
@@ -138,8 +134,6 @@ The response will include an `X-Next-Page-Url` header with the URL to request th
 
 ## Get a single transaction
 
-> Success Response Code: 200
-
 ```ruby
 # Get transaction with the ID
 transaction_id = '538bdc82848a604c007ceac6'
@@ -187,8 +181,6 @@ $url = 'https://api.buttercoin.com/v1/transactions/538bdc82848a604c007ceac6';
 $client->getTransactionByUrl($url);
 ?>
 ```
-
-> The above command returns an Object structured like this:
 
 ```ruby
 # Hashie::Mash Object
@@ -324,7 +316,7 @@ $client->createDeposit($deposit);
 ?>
 ```
 
-> A successful deposit transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202:
+> A successful deposit transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202.
 
 ```ruby
 # string
@@ -429,7 +421,7 @@ response.message # This operation requires email confirmation
 ?>
 ```
 
-> A successful withdrawal transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202
+> A successful withdrawal transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202.
 
 ```ruby
 # string
@@ -535,7 +527,7 @@ response.message # This operation requires email confirmation
 ?>
 ```
 
-> A successful withdrawal transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202:
+> A successful withdrawal transaction creation returns the url location of the new transaction in the response location header with HTTP Response Code of 202.
 
 ```ruby
 # string
@@ -576,8 +568,6 @@ For your security, the default setting for withdrawals requires email confirmati
 </aside>
 
 ## Cancel a transaction
-
-> Success Response Code: 204
 
 ```ruby
   transaction_id = 'e3afed81-4a9c-4480-a78a-e0872408b95a'

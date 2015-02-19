@@ -1,10 +1,100 @@
 # Public
 
-These endpoints do not require an API key for access.
+These endpoints do not require authentication.
+
+## Get the ticker
+
+```shell
+curl -i https://api.buttercoin.com/v1/ticker
+```
+
+```java
+import com.buttercoin.api.*;
+
+Buttercoin buttercoin = Buttercoin.newBuilder().build();
+Future<Ticker> t = buttercoin.getTicker();
+BigDecimal last = t.get().getLast();
+```
+
+```python
+client.get_ticker()
+```
+
+```javascript
+client.getTicker(function (err, ticker) {
+  console.log("ticker err", err);
+  console.log("ticker", ticker);
+});
+```
+
+```php
+<?php
+client->getTicker();
+?>
+```
+
+```ruby
+client.get_ticker()
+```
+
+```python
+# Dict Object
+{
+  "currency": "USD",
+  "last": 404.12,
+  "bid": 403.98,
+  "ask": 404.22
+}
+```
+
+```javascript
+// JSON Object
+{
+  "currency": "USD",
+  "last": 404.12,
+  "bid": 403.98,
+  "ask": 404.22
+}
+```
+
+```php
+<?php
+// Array Object
+[
+  "currency" => USD,
+  "last" => 589.67,
+  "bid" => 584.95,
+  "ask" => 589.67
+]
+?>
+```
+
+```ruby
+# Hashie::Mash Object
+ticker.ask # 589.67
+ticker.bid # 584.95
+ticker.last # 589.67
+ticker.currency # "USD"
+```
+
+Get the last trade price, current ask, and current bid.
+
+### HTTP Request
+
+`GET /v1/ticker`
 
 ## Get the orderbook
 
-> Success Response Code: 200
+```shell
+curl -i https://api.buttercoin.com/v1/orderbook
+```
+
+```java
+import com.buttercoin.api.*;
+
+Buttercoin buttercoin = Buttercoin.newBuilder().build();
+Future<OrderBook> t = buttercoin.getOrderBook();
+```
 
 ```ruby
 client.get_order_book()
@@ -26,8 +116,6 @@ client.getOrderbook(function (err, orderBook) {
 $client->getOrderBook();
 ?>
 ```
-
-> The above command returns an Object structured like this:
 
 ```ruby
 # Hashie::Mash Object examples
@@ -133,13 +221,18 @@ Get all the orders in the book on both the bid and ask sides
 
 `GET /v1/orderbook`
 
-<aside class="notice">
-An API Key is not required to access this endpoint.
-</aside>
-
 ## Get trade history
 
-> Success Response Code: 200
+```shell
+curl -i https://api.buttercoin.com/v1/trades
+```
+
+```java
+import com.buttercoin.api.*;
+
+Buttercoin buttercoin = Buttercoin.newBuilder().build();
+Future<TradeHistory> t = buttercoin.getTradeHistory();
+```
 
 ```ruby
 client.get_trade_history()
@@ -161,8 +254,6 @@ client.getTradeHistory(function (err, trades) {
 $client->getTradeHistory();
 ?>
 ```
-
-> The above command returns an Object structured like this:
 
 ```ruby
 # Hashie::Mash Object examples
@@ -272,86 +363,3 @@ Get the last one hundred trades
 ### HTTP Request
 
 `GET /v1/trades`
-
-<aside class="notice">
-An API Key is not required to access this endpoint.
-</aside>
-
-## Get the ticker
-
-> Success Response Code: 200
-
-```python
-client.get_ticker()
-```
-
-```javascript
-client.getTicker(function (err, ticker) {
-  console.log("ticker err", err);
-  console.log("ticker", ticker);
-});
-```
-
-```php
-<?php
-client->getTicker();
-?>
-```
-
-```ruby
-client.get_ticker()
-```
-
-> The above command returns an Object structured like this:
-
-```python
-# Dict Object
-{
-  "currency": "USD",
-  "last": 404.12,
-  "bid": 403.98,
-  "ask": 404.22
-}
-```
-
-```javascript
-// JSON Object
-{
-  "currency": "USD",
-  "last": 404.12,
-  "bid": 403.98,
-  "ask": 404.22
-}
-```
-
-```php
-<?php
-// Array Object
-[
-  "currency" => USD,
-  "last" => 589.67,
-  "bid" => 584.95,
-  "ask" => 589.67
-]
-?>
-```
-
-```ruby
-# Hashie::Mash Object
-ticker.ask # 589.67
-ticker.bid # 584.95
-ticker.last # 589.67
-ticker.currency # "USD"
-```
-
-Get the last trade price, current ask, and current bid
-
-### HTTP Request
-
-`GET /v1/ticker`
-
-<aside class="notice">
-An API Key is not required to access this endpoint.
-</aside>
-
-

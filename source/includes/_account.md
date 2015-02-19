@@ -4,8 +4,6 @@ Retrieve data specific to your Buttercoin account
 
 ## Get account balances
 
-> Success Response Code: 200
-
 ```python
 client.get_balances()
 ```
@@ -26,8 +24,6 @@ client->getBalances();
 ```ruby
 client.get_balances()
 ```
-
-> The above command returns an Object structured like this:
 
 ```ruby
 # Hashie::Mash Object
@@ -69,8 +65,6 @@ This endpoint retrieves the account balances in all currencies held.
 
 ## Get deposit address
 
-> Success Response Code: 200
-
 ```python
 client.get_deposit_address()
 ```
@@ -91,8 +85,6 @@ client->getDepositAddress();
 ```ruby
 client.get_deposit_address()
 ```
-
-> The above command returns an Object structured like this:
 
 ```ruby
 # returns a string

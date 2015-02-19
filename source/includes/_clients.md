@@ -1,6 +1,14 @@
-# Libraries
+# API Clients
 
-> To install the Buttercoin API Client:
+```java
+// Add this dependency to your project's POM file:
+
+<dependency>
+  <groupId>com.buttercoin</groupId>
+  <artifactId>buttercoin-java</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
 
 ```ruby
 # Add to your Gemfile
@@ -30,8 +38,6 @@ We've built the following officially supported API Clients:
 * [PHP](https://github.com/buttercoin/buttercoin-php) - Returns data in Array format
 * [Ruby](https://github.com/buttercoin/buttercoin-ruby) - Returns data as [Hashie::Mash](https://github.com/intridea/hashie) objects
 * [Python](https://github.com/buttercoin/buttercoin-python) - Returns data in JSON format
-
-Have another suggested language for a client?  Just [let us know](mailto:api@buttercoin.com).
 
 <aside class="notice">
   These libraries are open source projects and we love involvement from the community! Hit us up with pull requests and issues.
