@@ -78,7 +78,7 @@ Buttercoin will never ask you for your API key or secret. Please <a href="mailto
 
           <h1 id='libraries'>Libraries</h1>
 <blockquote>
-<p>To install the Buttercoin SDK client:</p>
+<p>To install the Buttercoin API Client:</p>
 </blockquote>
 <pre class="highlight ruby"><span class="c1"># Add to your Gemfile</span>
 <span class="n">gem</span> <span class="s1">'buttercoin'</span><span class="p">,</span> <span class="s1">'~&gt; 0.0.3'</span>
@@ -88,7 +88,7 @@ Buttercoin will never ask you for your API key or secret. Please <a href="mailto
 </pre>
 <pre class="highlight python"><span class="n">pip</span> <span class="n">install</span> <span class="n">buttercoin</span>
 </pre>
-<pre class="highlight javascript"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">buttercoinsdk</span><span class="o">-</span><span class="nx">node</span>
+<pre class="highlight javascript"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">buttercoin</span><span class="o">-</span><span class="nx">node</span>
 </pre>
 <pre class="highlight php">// Using Composer
 php composer.phar require buttercoin/buttercoin-sdk:~0.0.3
@@ -97,10 +97,11 @@ php composer.phar require buttercoin/buttercoin-sdk:~0.0.3
 <p>We&rsquo;ve built the following officially supported API Client SDK&rsquo;s</p>
 
 <ul>
-<li><a href="https://github.com/buttercoin/buttercoinsdk-node">Node.js</a> - Returns data in JSON format</li>
-<li><a href="https://github.com/buttercoin/buttercoinsdk-php">PHP</a> - Returns data in Array format</li>
-<li><a href="https://github.com/buttercoin/buttercoinsdk-ruby">Ruby</a> - Returns data as <a href="https://github.com/intridea/hashie">Hashie::Mash</a> objects</li>
-<li><a href="https://github.com/buttercoin/buttercoinsdk-python">Python</a> - Returns data in JSON format</li>
+<li><a href="https://github.com/buttercoin/buttercoin-java">Java/Scala</a> - Returns data as Java objects</li>
+<li><a href="https://github.com/buttercoin/buttercoin-node">Node.js</a> - Returns data in JSON format</li>
+<li><a href="https://github.com/buttercoin/buttercoin-php">PHP</a> - Returns data in Array format</li>
+<li><a href="https://github.com/buttercoin/buttercoin-ruby">Ruby</a> - Returns data as <a href="https://github.com/intridea/hashie">Hashie::Mash</a> objects</li>
+<li><a href="https://github.com/buttercoin/buttercoin-python">Python</a> - Returns data in JSON format</li>
 </ul>
 
 <p>Have another suggested language for a client?  Just <a href="mailto:api@buttercoin.com?subject=Add%20An%20API%20Language">let us know</a>.</p>
@@ -769,6 +770,14 @@ An API Key is not required to access this endpoint.
 </tr>
 </thead><tbody>
 <tr>
+<td><code class="prettyprint">page</code></td>
+<td>Integer</td>
+</tr>
+<tr>
+<td><code class="prettyprint">pageSize</code></td>
+<td>Integer</td>
+</tr>
+<tr>
 <td><code class="prettyprint">status</code></td>
 <td>enum: <code class="prettyprint">[&#39;opened&#39;, &#39;partial-filled&#39;, &#39;filled&#39;, &#39;canceled&#39;]</code></td>
 </tr>
@@ -793,6 +802,10 @@ An API Key is not required to access this endpoint.
 <td>format: ISO-8601, e.g. <code class="prettyprint">&#39;2014-05-06T13:15:30Z&#39;</code></td>
 </tr>
 </tbody></table>
+<h3 id='paging'>Paging</h3>
+<p>Use <code class="prettyprint">page</code> and <code class="prettyprint">pageSize</code> parameters to retrieve additional order results. The default <code class="prettyprint">page</code> parameter value is 1 if not provided. The default <code class="prettyprint">pageSize</code> parameter value is 20 if not provided.</p>
+
+<p>The response will include an <code class="prettyprint">X-Next-Page-Url</code> header with the URL to request the next page of order results.</p>
 <h3 id='querying-multiple-order-statuses'>Querying Multiple Order Statuses</h3>
 <p>To search for multiple order statuses, use comma separated values:
 <code class="prettyprint">&#39;opened,partial-filled&#39;</code></p>
@@ -1225,6 +1238,14 @@ An API Key is not required to access this endpoint.
 </tr>
 </thead><tbody>
 <tr>
+<td><code class="prettyprint">page</code></td>
+<td>Integer</td>
+</tr>
+<tr>
+<td><code class="prettyprint">pageSize</code></td>
+<td>Integer</td>
+</tr>
+<tr>
 <td><code class="prettyprint">status</code></td>
 <td>enum: <code class="prettyprint">[&#39;pending&#39;, &#39;processing&#39;, &#39;funded&#39;, &#39;canceled&#39;, &#39;failed&#39;]</code></td>
 </tr>
@@ -1241,6 +1262,10 @@ An API Key is not required to access this endpoint.
 <td>format: ISO-8601, e.g. <code class="prettyprint">&#39;2014-05-06T13:15:30Z&#39;</code></td>
 </tr>
 </tbody></table>
+<h3 id='paging'>Paging</h3>
+<p>Use <code class="prettyprint">page</code> and <code class="prettyprint">pageSize</code> parameters to retrieve additional transaction results. The default <code class="prettyprint">page</code> parameter value is 1 if not provided. The default <code class="prettyprint">pageSize</code> parameter value is 20 if not provided.</p>
+
+<p>The response will include an <code class="prettyprint">X-Next-Page-Url</code> header with the URL to request the next page of transaction results.</p>
 <h2 id='get-a-single-transaction'>Get a single transaction</h2>
 <blockquote>
 <p>Success Response Code: 200</p>
@@ -1720,8 +1745,10 @@ For your security, the default setting for withdrawals requires email confirmati
 </tr>
 </tbody></table>
 
+<p>rate limiting is considered on a per-IP basis.</p>
+
 <blockquote>
-<p>Requests exceeding the limit will receive a &lsquo;429 Too Many Requests&rsquo; response.</p>
+<p>Requests exceeding the limit will receive a &lsquo;429 Too Many Requests&rsquo; response. Rate limiting is considered on a per-IP basis.</p>
 </blockquote>
 <h3 id='http-response-headers'>HTTP Response Headers</h3>
 <p>The following headers are applied per minute to public and authenticated requests:</p>
@@ -1745,10 +1772,8 @@ For your security, the default setting for withdrawals requires email confirmati
 <td>When your next rate limit window will be reset (in UTC <a href="http://en.wikipedia.org/wiki/Unix_time">epoch milliseconds</a>)</td>
 </tr>
 </tbody></table>
-<h2 id='public'>Public</h2>
-<p>Public requests do not require an API key and secret.  Public rate limiting is considered on a per-IP basis.</p>
-<h2 id='authenticated'>Authenticated</h2>
-<p>Authenticated requests require an API key and secret to access details specific to your account.  Authenticated rate limiting is considered on a per-account basis. Please <a href="mailto:api@buttercoin.com">contact us</a> if you would like to increase the rate limits for your account.</p>
+<h3 id='bursting'>Bursting</h3>
+<p>We allow temporary bursting up to 600 requests per minute. After you submit your first request, you&rsquo;ll find that your <code class="prettyprint">X-Rate-Limit-Remaining</code> will gradually increase (at 120/minute minus your usage) until it reaches a total of 600. If you do not submit any requests within one hour, it will reset again to 120 requests per minute.</p>
 
           <h1 id='errors'>Errors</h1>
 <blockquote>
@@ -1827,7 +1852,7 @@ For your security, the default setting for withdrawals requires email confirmati
 
 <p>To help you test your more complicated workflows, we&rsquo;ve created a sandbox environment that uses testnet bitcoins and fake funds.</p>
 
-<p>Each Buttercoin SDK client allows you to include a sandbox environment parameter during initialization. Please see SDK documentation for details.</p>
+<p>Each Buttercoin API Client allows you to include a sandbox environment parameter during initialization. Please see API Client documentation for details.</p>
 
 <p>To use the sandbox, you will need to create a sandbox account.  If you&rsquo;d like one, <a href="mailto:api@buttercoin.com?subject=Add%20A%20Sandbox%20Account">let us know</a>.  We&rsquo;ll send you an invitation email with instructions.</p>
 
