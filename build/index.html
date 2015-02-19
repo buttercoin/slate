@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="https://www.buttercoin.com/favicon.png" />
     <link rel="apple-touch-icon" href="https://www.buttercoin.com/favicon.png">
 
-    <title>Buttercoin API documentation</title>
+    <title>Buttercoin API Documentation</title>
 
     <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
@@ -47,8 +47,8 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='https://www.buttercoin.com/#/api'>Manage your API Developer Keys</a></li>
-            <li>Need help? <a href='mailto:api@buttercoin.com?subject=API%20Question'>Email Us</a></li>
+            <li><a href='https://www.buttercoin.com/#/api'>Manage your API Keys</a></li>
+            <li>Need help? <a href='mailto:api@buttercoin.com'>Get in touch</a>.</li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -91,10 +91,10 @@ Buttercoin will never ask you for your API key or secret. Please <a href="mailto
 <pre class="highlight javascript"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">buttercoin</span><span class="o">-</span><span class="nx">node</span>
 </pre>
 <pre class="highlight php">// Using Composer
-php composer.phar require buttercoin/buttercoin-sdk:~0.0.3
+php composer.phar require buttercoin/buttercoin-php:~0.0.3
 </pre>
 
-<p>We&rsquo;ve built the following officially supported API Client SDK&rsquo;s</p>
+<p>We&rsquo;ve built the following officially supported API Clients:</p>
 
 <ul>
 <li><a href="https://github.com/buttercoin/buttercoin-java">Java/Scala</a> - Returns data as Java objects</li>
@@ -104,7 +104,7 @@ php composer.phar require buttercoin/buttercoin-sdk:~0.0.3
 <li><a href="https://github.com/buttercoin/buttercoin-python">Python</a> - Returns data in JSON format</li>
 </ul>
 
-<p>Have another suggested language for a client?  Just <a href="mailto:api@buttercoin.com?subject=Add%20An%20API%20Language">let us know</a>.</p>
+<p>Have another suggested language for a client?  Just <a href="mailto:api@buttercoin.com">let us know</a>.</p>
 
 <p><aside class="notice">
   These libraries are open source projects and we love involvement from the community! Hit us up with pull requests and issues.
@@ -130,7 +130,7 @@ php composer.phar require buttercoin/buttercoin-sdk:~0.0.3
     <span class="n">mode</span><span class="o">=</span><span class="s">'&lt;mode&gt;'</span>
     <span class="p">)</span>
 </pre>
-<pre class="highlight javascript"><span class="kd">var</span> <span class="nx">buttercoin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'buttercoinsdk-node'</span><span class="p">)</span>
+<pre class="highlight javascript"><span class="kd">var</span> <span class="nx">buttercoin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'buttercoin-node'</span><span class="p">)</span>
 <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">buttercoin</span><span class="p">(</span>
     <span class="s1">'&lt;api_key&gt;'</span><span class="p">,</span>
     <span class="s1">'&lt;api_secret&gt;'</span><span class="p">,</span>
@@ -186,7 +186,7 @@ You must always keep your API Keys secure to make sure no one can access your ac
 
 <p><code class="prettyprint">1403755197367https://api.buttercoin.com/v1/orders{&quot;instrument&quot;:&quot;BTC_USD&quot;,&quot;side&quot;:&quot;buy&quot;,&quot;orderType&quot;:&quot;limit&quot;,&quot;quantity&quot;:1,&quot;price&quot;:600.01}</code></p>
 
-<p>Still not sure?  Find code examples in <a href="https://github.com/buttercoin/buttercoinsdk-node/blob/master/index.js#L32">Node.js</a>, <a href="https://github.com/buttercoin/buttercoinsdk-php/blob/master/src/Client/ButtercoinClient.php#L144">PHP</a>, <a href="https://github.com/buttercoin/buttercoinsdk-python/blob/master/buttercoin/api.py#L101">Python</a>, and <a href="https://github.com/buttercoin/buttercoinsdk-ruby/blob/master/lib/buttercoin/client.rb#L91">Ruby</a>.</p>
+<p>Still not sure?  Find code examples in <a href="https://github.com/buttercoin/buttercoin-node/blob/master/index.js#L32">Node.js</a>, <a href="https://github.com/buttercoin/buttercoin-php/blob/master/src/Client/ButtercoinClient.php#L144">PHP</a>, <a href="https://github.com/buttercoin/buttercoin-python/blob/master/buttercoin/api.py#L101">Python</a>, and <a href="https://github.com/buttercoin/buttercoin-ruby/blob/master/lib/buttercoin/client.rb#L91">Ruby</a>.</p>
 
           <h1 id='public'>Public</h1>
 <p>These endpoints do not require an API key for access.</p>
