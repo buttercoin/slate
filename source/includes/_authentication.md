@@ -62,7 +62,7 @@ Buttercoin will *never* ask you for your API Key or Secret. Please [report](mail
 request this information.
 
 You must always keep your API Keys secure to make sure no one can access your account.  If you think a key might be compromised, simply revoke
-your API key [here](https://www.buttercoin.com/#/api).
+your API key [here](https://buttercoin.com/#/api).
 </aside>
 
 ### Building an HMAC Signature with SHA-256
