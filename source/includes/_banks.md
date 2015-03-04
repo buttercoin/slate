@@ -90,6 +90,13 @@ This endpoint retrieves all banks for the current user
 
 `GET /v1/banks`
 
+### URL Parameters
+
+Parameter | Possible Values
+--------- | -----------
+verificationType | "InstantVerification", "MicrodepositVerification"
+verificationStatus | "Pending", "Failed", "Complete"
+
 ## Get a single bank
 
 ```ruby
