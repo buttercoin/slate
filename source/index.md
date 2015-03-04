@@ -21,6 +21,7 @@ includes:
   - public
   - key
   - account
+  - banks
   - orders
   - transactions
   - rate
