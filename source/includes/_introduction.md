@@ -29,4 +29,4 @@ Each Buttercoin API Client allows you to include a sandbox environment parameter
 documentation for details.
 
 The web interface for the sandbox is available at [https://www-sandbox.buttercoin.com/](https://www-sandbox.buttercoin.com/).
-The API endpoint for the sandbox is [`https://sandbox.buttercoin.com`](https://sandbox.buttercoin.com)
+The API endpoint for the sandbox is [`https://sandbox.buttercoin.com`](https://sandbox.buttercoin.com).

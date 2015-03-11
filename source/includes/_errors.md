@@ -4,16 +4,15 @@
 
 ```json
 {
-  "status": 400,
-    "errors": [
-    {
-      "message": "Bad Request"
-    }
-  ]
+    "status": 401,
+    "errors": [{
+        "code": "authentication_failed",
+        "message": "The resource requires authentication, which was not supplied with the request"
+    }]
 }
 ```
 
-The Buttercoin API uses the following error codes:
+The Buttercoin API uses the following error status codes:
 
 Error Code | Meaning
 ---------- | -------
