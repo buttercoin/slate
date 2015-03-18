@@ -41,6 +41,7 @@ end
     "routingNumber": "*******21",
     "bankName": "USA Test Bank",
     "accountType": "CheckingAccount",
+    "accountClass": "PersonalAccount",
     "enabled": true,
     "verificationType": "InstantVerification",
     "verificationStatus": "Complete"
@@ -58,6 +59,7 @@ end
     "routingNumber": "*******21",
     "bankName": "USA Test Bank",
     "accountType": "CheckingAccount",
+    "accountClass": "BusinessAccount",
     "enabled": true,
     "verificationType": "InstantVerification",
     "verificationStatus": "Complete"
@@ -76,6 +78,7 @@ end
     "routingNumber" => "*******21",
     "bankName" => "USA Test Bank",
     "accountType" => "CheckingAccount",
+    "accountClass" => "PersonalAccount",
     "enabled" => true,
     "verificationType" => "InstantVerification",
     "verificationStatus" => "Complete"
@@ -162,6 +165,7 @@ bank.accountNumber # "*******89"
   "routingNumber": "*******21",
   "bankName": "USA Test Bank",
   "accountType": "CheckingAccount",
+  "accountClass": "BusinessAccount",
   "enabled": true,
   "verificationType": "InstantVerification",
   "verificationStatus": "Complete"
@@ -177,6 +181,7 @@ bank.accountNumber # "*******89"
   "routingNumber": "*******21",
   "bankName": "USA Test Bank",
   "accountType": "CheckingAccount",
+  "accountClass": "BusinessAccount",
   "enabled": true,
   "verificationType": "InstantVerification",
   "verificationStatus": "Complete"
@@ -193,6 +198,7 @@ bank.accountNumber # "*******89"
   "routingNumber" => "*******21",
   "bankName" => "USA Test Bank",
   "accountType" => "CheckingAccount",
+  "accountClass" => "PersonalAccount",
   "enabled" => true,
   "verificationType" => "InstantVerification",
   "verificationStatus" => "Complete"
